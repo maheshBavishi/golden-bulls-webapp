@@ -41,6 +41,12 @@
                         animation: spin3d 0.8s linear;
                     }
                 }
+
+                .iconCemter {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
             }
 
 
@@ -87,17 +93,23 @@
                 display: flex;
                 justify-content: center;
                 position: relative;
+                height: 263px;
+                align-items: center;
 
                 &::before {
                     position: absolute;
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: 240px;
-                    height: 219px;
+                    width: 200px;
+                    height: 200px;
+                    background: #FFEEBF;
+                    opacity: 0.4;
+                    filter: blur(104.28570556640625px);
                     content: '';
-                    background: linear-gradient(180deg, rgba(238, 185, 43, 0.00) 25.48%, #724900 100%);
-                    mix-blend-mode: color;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: 0.3s ease-in-out;
                 }
 
                 img {

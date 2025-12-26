@@ -4,7 +4,9 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './whatWeOffer.module.scss'
 
-const ComputerIcon = '/assets/icons/computer.svg'
+const ComputerIcon = '/assets/icons/computer.png'
+const GroupComputerIcon = '/assets/icons/group-computer.png'
+const PersonIcon = '/assets/icons/Person.png'
 const LineImage = '/assets/images/line.png'
 
 const offerData = [
@@ -18,13 +20,13 @@ const offerData = [
         title: 'Live Online Courses',
         description:
             'Participate in dynamic, scheduled live online sessions led by an expert instructor.',
-        icon: ComputerIcon,
+        icon: GroupComputerIcon,
     },
     {
         title: 'In Person Courses',
         description:
             'Learn directly from experienced professionals with proven market strategies.',
-        icon: ComputerIcon,
+        icon: PersonIcon,
     },
 ]
 
