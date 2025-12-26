@@ -1,0 +1,24 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.button {
+    button {
+        padding: 12px 30px;
+        border: none;
+        cursor: pointer;
+        color: #000;
+        font-size: 20.588px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 42.891px;
+        background: var(--GOLD, linear-gradient(90deg, #F9F490 0%, #E4AB40 25.48%, #FEFBA5 75%, #BD894E 100%));
+        @include font-bold;
+
+        @include respond-to("xl") {
+            font-size: 12px 26px;
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.blogSectionAlignment {
+    padding: 0 0 120px 0;
+
+    .title {
+        padding: 0 0 60px 0;
+
+        h2 {
+            @include gradient-text;
+            @include heading-font;
+            font-size: 40px;
+            font-style: normal;
+            text-align: center;
+            font-weight: 400;
+            line-height: 140%;
+            text-transform: uppercase;
+        }
+    }
+
+    .relative {
+        position: relative;
+    }
+
+
+    .twoButtonAlignment {
+        @include respond-to("xl") {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0 0 0;
+        }
+    }
+
+    .navBtn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -70px;
+        z-index: 99;
+        background-color: transparent;
+        border: none;
+
+        @include respond-to("xl") {
+            position: inherit;
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+
+        svg {
+            max-width: 40px;
+            cursor: pointer;
+        }
+    }
+
+    .rightButton {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -70px;
+        z-index: 99;
+        background-color: transparent;
+        border: none;
+
+        @include respond-to("xl") {
+            position: inherit;
+            top: 0;
+            right: 0;
+            transform: none;
+        }
+
+        svg {
+            max-width: 40px;
+            cursor: pointer;
+            transform: rotate(180deg);
+        }
+    }
+
+    .card {
+        .details {
+            padding: 30px 0 0 0;
+
+            h3 {
+                color: #FFF;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                @include font-medium;
+                margin: 0 0 13px 0;
+            }
+
+            .twoContent {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+
+                span {
+                    display: block;
+                    color: #B6B6B6;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    @include font-medium;
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0 0 0 15px;
+                    color: #B6B6B6;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .cardImage {
+            height: 234px;
+
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 12px;
+                object-fit: cover;
+                height: 100%;
+
+            }
+        }
+    }
+}

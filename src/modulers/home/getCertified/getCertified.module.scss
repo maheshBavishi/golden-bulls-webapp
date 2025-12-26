@@ -1,0 +1,83 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.getCertified {
+    padding: 120px 0;
+    background: #0C0C0C;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        width: 200px;
+        height: 200px;
+        background-color: #D9D9D9;
+        filter: blur(200px);
+        position: absolute;
+        top: 20%;
+        left: 70%;
+        transform: translateX(-50%);
+        content: '';
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 720px;
+        gap: 20px;
+        align-items: center;
+
+
+        .image {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        h2 {
+            @include gradient-text;
+            @include heading-font;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            text-transform: uppercase;
+            margin: 0 0 37px 0;
+        }
+
+        p {
+            max-width: 658px;
+            color: rgba(255, 255, 255, 0.70);
+            font-size: 24px;
+            font-style: normal;
+            margin: 0 0 37px 0;
+            font-weight: 400;
+            line-height: normal;
+            @include font-normal;
+        }
+
+        .allIconAlignment {
+            .iconGrid:last-child {
+                padding: 0;
+            }
+
+            .iconGrid {
+                display: grid;
+                grid-template-columns: 29px 1fr;
+                gap: 10px;
+                padding: 0 0 18px 0;
+
+                span {
+                    display: block;
+                    color: #B6B6B6;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include font-normal;
+                }
+            }
+
+        }
+    }
+}

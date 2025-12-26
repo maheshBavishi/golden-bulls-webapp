@@ -1,0 +1,57 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../scss/font/font.scss' as *;
+
+.header {
+    .headerAlignment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            img {
+                display: block;
+                max-width: 125px;
+                cursor: pointer;
+
+                @include respond-to("xl") {
+                    max-width: 100px;
+                }
+            }
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+
+            a {
+                display: block;
+                color: rgba(255, 255, 255, 0.70);
+                font-size: 20.588px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include font-normal;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+
+                @include respond-to("xl") {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.headerTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+}
