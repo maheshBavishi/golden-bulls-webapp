@@ -7,6 +7,27 @@ import styles from './whatWeOffer.module.scss'
 const ComputerIcon = '/assets/icons/computer.svg'
 const LineImage = '/assets/images/line.png'
 
+const offerData = [
+    {
+        title: 'On demand courses',
+        description:
+            'Real-time market breakdowns and actionable insights to improve your decision-making.',
+        icon: ComputerIcon,
+    },
+    {
+        title: 'Live Online Courses',
+        description:
+            'Participate in dynamic, scheduled live online sessions led by an expert instructor.',
+        icon: ComputerIcon,
+    },
+    {
+        title: 'In Person Courses',
+        description:
+            'Learn directly from experienced professionals with proven market strategies.',
+        icon: ComputerIcon,
+    },
+]
+
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -56,7 +77,7 @@ export default function WhatWeOffer() {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    {[1, 2, 3].map((_, index) => (
+                    {offerData.map((item, index) => (
                         <motion.div
                             key={index}
                             className={styles.griditems}
@@ -67,9 +88,7 @@ export default function WhatWeOffer() {
                             }}
                         >
                             {/* Rotating line */}
-                            <motion.div
-                                className={styles.lineImage}
-                            >
+                            <motion.div className={styles.lineImage}>
                                 <img src={LineImage} alt="Line" />
                             </motion.div>
 
@@ -81,19 +100,17 @@ export default function WhatWeOffer() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2, duration: 0.4 }}
                             >
-                                <img src={ComputerIcon} alt="ComputerIcon" />
+                                <img src={item.icon} alt={item.title} />
                             </motion.div>
 
                             {/* Text */}
                             <div className={styles.details}>
-                                <h3>On demand courses</h3>
-                                <p>
-                                    Real-time market breakdowns and actionable insights
-                                    to improve your decision-making.
-                                </p>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
                             </div>
                         </motion.div>
                     ))}
+
                 </motion.div>
             </div>
         </section>
