@@ -1,0 +1,142 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+@use '../../../scss/font/font.scss' as *;
+
+.latestBlog {
+    padding: 120px 0 0 0;
+
+    .sectionHeaderAlignment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        .buttonAlignent {
+            background-color: #000;
+            padding-left: 24px;
+            position: relative;
+            z-index: 9;
+
+            button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background-color: transparent;
+                padding: 12px 29px;
+                border-radius: 42.891px;
+                border: 2px solid var(--GOLD, #F9F490);
+
+                span {
+                    @include font-bold;
+                    font-size: 20.588px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    @include gradient-text;
+                }
+            }
+        }
+
+        .line {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 2px;
+            background: #C29255;
+        }
+
+        .title {
+            position: relative;
+
+            .text {
+                background: #000;
+                position: relative;
+                z-index: 9;
+                padding-right: 24px;
+                width: fit-content;
+            }
+
+
+
+            h2 {
+                @include heading-font;
+                @include gradient-text;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 400;
+                position: relative;
+                line-height: 140%;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 22px;
+        padding: 60px 0 0 0;
+
+        .griditems {
+            .details {
+                padding: 20px 0 0 0;
+
+                h3 {
+                    @include font-medium;
+                    color: #FFF;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    margin: 0 0 9px 0;
+                    line-height: normal;
+                }
+
+                .twoContentAlignment {
+                    display: flex;
+                    align-items: center;
+                    gap: 11px;
+
+                    span {
+                        display: block;
+                        color: #B6B6B6;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        @include font-medium;
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding: 0 0 0 15px;
+
+                        li {
+                            color: #B6B6B6;
+                            font-family: "SF Pro Display";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            @include font-medium;
+                        }
+                    }
+                }
+            }
+
+            .cardImage {
+                img {
+                    display: block;
+                    object-fit: cover;
+                    height: 192px;
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+
+    .paginationTopAlignment {
+        padding: 60px 0 0 0;
+    }
+}
