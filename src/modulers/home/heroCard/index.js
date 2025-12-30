@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './heroCard.module.scss'
-
+import CountUp from 'react-countup';
 const containerVariants = {
     hidden: {},
     visible: {
@@ -40,21 +40,50 @@ export default function HeroCard() {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
                 >
-                    {[
-                        { title: '5,000+', text: 'Active Learners' },
-                        { title: '98%', text: 'Course Rating' },
-                        { title: '10,000+', text: 'Chart Analysis Shared' },
-                        { title: '300+', text: 'Downloadable Resources' },
-                    ].map((item, index) => (
-                        <motion.div
-                            key={index}
-                            className={styles.griditems}
-                            variants={cardVariants}
-                        >
-                            <h3>{item.title}</h3>
-                            <p>{item.text}</p>
-                        </motion.div>
-                    ))}
+                    <motion.div
+
+                        className={styles.griditems}
+                        variants={cardVariants}
+                    >
+                        <h3>
+                            <CountUp end={5000} enableScrollSpy /> +
+                            <p>
+                                Active Learners
+                            </p>
+                        </h3>
+                    </motion.div>
+                    <motion.div
+
+                        className={styles.griditems}
+                        variants={cardVariants}
+                    >
+                        <h3>
+                            <CountUp end={98} enableScrollSpy /> %
+                        </h3>
+                        <p>Course Rating</p>
+                    </motion.div>
+                    <motion.div
+
+                        className={styles.griditems}
+                        variants={cardVariants}
+                    >
+                        <h3>
+                            <CountUp end={10000} enableScrollSpy /> +
+                        </h3>
+                        <p>Chart Analysis Shared</p>
+                    </motion.div>
+                    <motion.div
+
+                        className={styles.griditems}
+                        variants={cardVariants}
+                    >
+                        <h3>
+                            <CountUp end={300} enableScrollSpy /> +
+                        </h3>
+                        <p>
+                            Downloadable Resources
+                        </p>
+                    </motion.div>
                 </motion.div>
             </div>
         </div>
