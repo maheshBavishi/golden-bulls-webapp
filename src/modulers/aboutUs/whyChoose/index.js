@@ -122,7 +122,20 @@ export default function WhyChoose() {
                                             <img src={BookIcon} alt='BookIcon' />
                                         </div>
                                     </div>
-                                    <div className={styles.list}></div>
+                                    <div className={styles.list}>
+                                        <div className={styles.iconText}>
+                                            <span> ✦ Well structured lessons</span>
+                                        </div>
+                                        <div className={styles.iconText}>
+                                            <span> ✦ Step-by-step learning</span>
+                                        </div>
+                                        <div className={styles.iconText}>
+                                            <span> ✦ Market-focused education</span>
+                                        </div>
+                                        <div className={styles.iconText}>
+                                            <span> ✦  Practical examples</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className={styles.rightvec}>
                                     <img src={RightVec} alt='RightVec' />
