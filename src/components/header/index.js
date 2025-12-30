@@ -17,10 +17,10 @@ export default function Header() {
               </Link>
             </div>
             <div className={styles.menu}>
-              <a aria-label='About Us'>About Us</a>
-              <a aria-label='Courses'>Courses</a>
-              <a aria-label='Blogs'>Blogs</a>
-              <a aria-label='Contact Us'>Contact Us</a>
+              <Link href="/about-us" aria-label='About Us'>About Us</Link>
+              <Link href="/courses" aria-label='Courses'>Courses</Link>
+              <Link href="/blog" aria-label='Blogs'>Blogs</Link>
+              <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
               <a aria-label='Sign-up'>Sign-up</a>
               <Button text='Login' />
             </div>
