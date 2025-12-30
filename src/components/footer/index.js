@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './footer.module.scss';
 import Button from '../button';
+import Link from 'next/link';
 const FooterLogo = '/assets/logo/footer-logo.svg';
 const FacebookIcon = '/assets/icons/facebook.svg';
 const TwitterIcon = '/assets/icons/twitter.svg';
@@ -44,10 +45,10 @@ export default function Footer() {
                   Quick Links
                 </h2>
                 <div className={styles.line}></div>
-                <a aria-label='About'>About</a>
-                <a aria-label='Courses'>Courses</a>
-                <a aria-label='Blog'>Blog</a>
-                <a aria-label='Contact'>Contact</a>
+                <Link href="/about-us" aria-label='About Us'>About Us</Link>
+                <Link href="/courses" aria-label='Courses'>Courses</Link>
+                <Link href="/blog" aria-label='Blogs'>Blogs</Link>
+                <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
               </div>
               <div className={styles.text}>
                 <h2>
@@ -114,10 +115,10 @@ export default function Footer() {
         </div>
       </footer>
       <div className={styles.copyRight}>
-         <div className='container-md'>
-        <p>
-© 2025 Golden Bulls Academy. All rights reserved.
-        </p>
+        <div className='container-md'>
+          <p>
+            © 2025 Golden Bulls Academy. All rights reserved.
+          </p>
         </div>
       </div>
     </div>
