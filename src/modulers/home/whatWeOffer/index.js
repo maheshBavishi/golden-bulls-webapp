@@ -11,9 +11,9 @@ const LineImage = '/assets/images/line.png'
 
 const offerData = [
     {
-        title: 'On demand courses',
+        title: 'Recorded courses',
         description:
-            'Real-time market breakdowns and actionable insights to improve your decision-making.',
+            'Real time market breakdowns and actionable insights to improve your decision making.',
         icon: ComputerIcon,
     },
     {
@@ -25,7 +25,7 @@ const offerData = [
     {
         title: 'In Person Courses',
         description:
-            'Learn directly from experienced professionals with proven market strategies.',
+            'Engage in face to face learning conducted in a dedicated physical training environment.',
         icon: PersonIcon,
     },
 ]

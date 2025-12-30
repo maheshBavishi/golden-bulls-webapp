@@ -73,11 +73,11 @@ export default function JoinChannel() {
                         </motion.h2>
 
                         <motion.p variants={textItem}>
-                            Join our Telegram community to stay updated, ask questions, and connect with fellow learners. Get quick tips, important announcements, and valuable insights—all in one place.
+                            Join our Telegram community to stay updated, ask questions, and connect with fellow learners. Get quick tips, important announcements, and valuable insights all in one place. Be part of a growing network focused on learning and financial growth.
                         </motion.p>
 
                         <motion.p variants={textItem}>
-                            Engage in real-time discussions and get support whenever you need it. Grow faster by learning alongside an active and motivated community.
+                            Engage in real time discussions and get support whenever you need it. Grow faster by learning alongside an active and motivated community.
                         </motion.p>
 
                         <motion.div

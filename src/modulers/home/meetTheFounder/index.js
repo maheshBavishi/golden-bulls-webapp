@@ -71,11 +71,13 @@ export default function MeetTheFounder() {
                         </motion.h3>
 
                         <motion.p variants={textItem}>
-                            Amol Bhojgude, the Founder and CEO of Golden Bulls, built the academy with a clear mission—to simplify trading education and make high-quality learning accessible to everyone.
+                            Amol Bhojgude, the Founder and CEO of Golden Bulls, built the academy with a clear mission—to simplify trading education and make high quality learning accessible to everyone. With a passion for financial literacy and 8 years of personal experience studying the markets, Amol created a
+                            learning environment focused on clarity, structure, and real world application.
                         </motion.p>
 
                         <motion.p variants={textItem}>
-                            His leadership is driven by a commitment to empower learners with knowledge, discipline, and confidence, helping them develop the skills needed to navigate today’s financial markets with purpose and understanding.
+                            His leadership is driven by a commitment to empower learners with knowledge, discipline, and confidence, helping them develop the skills
+                            needed to navigate today’s financial markets with purpose and understanding.
                         </motion.p>
 
                         {/* SOCIAL ICONS */}

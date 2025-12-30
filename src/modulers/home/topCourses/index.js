@@ -50,7 +50,7 @@ export default function TopCourses() {
                     <div className={styles.tabGroup}>
                         <button className={styles.active}>
                             <span>
-                                On Demand Courses
+                                Recorded Courses
                             </span>
                         </button>
                         <button>

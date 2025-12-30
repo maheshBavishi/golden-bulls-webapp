@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './shapingConfident.module.scss'
-
+import { shapingConfidentData } from '@/constants'
 const BoxImage = '/assets/images/box.png'
 const LearningIcon = '/assets/icons/learning.svg'
 const LeftFrame = '/assets/icons/left-frame.png'
@@ -36,15 +36,18 @@ export default function ShapingConfident() {
                                     repeat: Infinity,
                                 }}
                             >
-                                {[...cards, ...cards].map((_, index) => (
-                                    <div className={styles.box} key={index}>
+                                {shapingConfidentData.map((item, index) => (
+                                    <div className={styles.box} key={item.id}>
                                         <div className={styles.icon}>
-                                            <img src={LearningIcon} alt="LearningIcon" />
+                                            <img src={item.icon} alt="LearningIcon" />
                                         </div>
                                         <h4>
-                                            Structured
-                                            <br />
-                                            Learning
+                                            {item.title.map((line, i) => (
+                                                <span key={i}>
+                                                    {line}
+                                                    <br />
+                                                </span>
+                                            ))}
                                         </h4>
                                     </div>
                                 ))}
@@ -85,8 +88,8 @@ export default function ShapingConfident() {
 
                             {/* Paragraphs */}
                             {[
-                                `Golden Bulls International Academy is committed to making high-quality financial education accessible to individuals around the world. With over seven years of industry experience, our team simplifies complex market concepts and equips learners with practical knowledge they can apply immediately.`,
-                                `We combine expert guidance, structured learning, and a global community to help you trade with clarity and discipline.`,
+                                `Many traders join academies, watch lessons, and still feel confused when they face real market charts. The market keeps changing, new strategies evolve, and trading technology updates faster than ever, but most traders are taught outdated methods with little real support. What’s missing is clear guidance and practical understanding. "Golden Bulls Academy" (Give our Headline Colour )was built from over five years of experience in this industry, focusing on modern strategies, evolving market technology, and real trading conditions.`,
+                                `We help traders learn how to adapt, manage risk with confidence, and trade with clarity instead of guesswork.`,
                             ].map((text, i) => (
                                 <motion.p
                                     key={i}
