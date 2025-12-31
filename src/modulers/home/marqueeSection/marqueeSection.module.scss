@@ -10,12 +10,19 @@
     gap: 30px;
     overflow: hidden;
 
+    @include respond-to("xl") {
+        padding: 20px 0;
+    }
 
     .icontext {
         display: flex;
         align-items: center;
         gap: 30px;
         white-space: nowrap;
+
+        @include respond-to("xl") {
+            gap: 24px;
+        }
 
         span {
             display: block;
@@ -27,6 +34,10 @@
             line-height: normal;
             letter-spacing: 1.04px;
             text-transform: uppercase;
+
+            @include respond-to("xl") {
+                font-size: 20px;
+            }
         }
     }
 }

@@ -5,6 +5,10 @@
 .faqSectionAlignment {
     padding: 120px 0;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
     .title {
         padding: 0 0 56px 0;
 
@@ -38,6 +42,10 @@
         position: relative;
         background: #0C0C0C;
         padding: 20px;
+
+        @include respond-to("xl") {
+            border-radius: 18px;
+        }
 
         .faqBody {
             &.hide {
@@ -101,6 +109,10 @@
                 font-weight: 500;
                 line-height: normal;
                 @include font-medium;
+
+                @include respond-to("xl") {
+                    font-size: 20px;
+                }
             }
         }
 
@@ -119,6 +131,10 @@
             mask-composite: exclude;
             pointer-events: none;
             transition: .3s ease-in-out;
+
+            @include respond-to("xl") {
+                border-radius: 18px;
+            }
         }
     }
 }

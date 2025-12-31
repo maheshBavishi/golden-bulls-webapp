@@ -5,6 +5,10 @@
 .blogSectionAlignment {
     padding: 0 0 120px 0;
 
+    @include respond-to("xl") {
+        padding: 0 0 100px 0;
+    }
+
     .title {
         padding: 0 0 60px 0;
 
@@ -91,6 +95,10 @@
                 line-height: normal;
                 @include font-medium;
                 margin: 0 0 13px 0;
+
+                @include respond-to("xl") {
+                    font-size: 20px;
+                }
             }
 
             .twoContent {

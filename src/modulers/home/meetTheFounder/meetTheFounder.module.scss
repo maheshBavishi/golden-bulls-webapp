@@ -7,11 +7,19 @@
     background-color: #000;
     position: relative;
 
+    @include respond-to("xl") {
+        padding: 100px 0 0 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 610px;
         gap: 20px;
         align-items: center;
+
+        @include respond-to("xl") {
+            grid-template-columns: 1fr 550px;
+        }
 
         .griditems {
             position: relative;
@@ -21,6 +29,10 @@
                 bottom: 30px;
                 left: 50%;
                 transform: translateX(-50%);
+
+                @include respond-to("xl") {
+                    left: 40%;
+                }
 
                 button {
                     padding: 14px;
@@ -39,6 +51,16 @@
                     align-items: center;
                     gap: 14px;
                     @include heading-font;
+
+                    @include respond-to("xl") {
+                        font-size: 20px;
+                    }
+
+                    img {
+                        @include respond-to("xl") {
+                            max-width: 40px;
+                        }
+                    }
                 }
             }
 
@@ -61,6 +83,11 @@
                 line-height: normal;
                 margin: 0 0 37px 0;
                 @include font-medium;
+
+                @include respond-to("xl") {
+                    font-size: 26px;
+                    margin: 0 0 26px 0;
+                }
             }
 
             p {
@@ -72,6 +99,10 @@
                 line-height: normal;
                 @include font-normal;
                 margin: 0 0 20px 0;
+
+                @include respond-to("xl") {
+                    @include font18;
+                }
             }
 
             .socialIcon {

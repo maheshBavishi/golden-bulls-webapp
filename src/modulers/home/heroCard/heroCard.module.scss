@@ -19,6 +19,11 @@
             overflow: hidden;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(153, 153, 153, 0.00) 100%);
 
+            @include respond-to("xl") {
+                padding: 30px;
+                border-radius: 18px;
+            }
+
             &:hover {
 
                 &::after {
@@ -70,6 +75,10 @@
                 mask-composite: exclude;
                 pointer-events: none;
                 transition: .3s ease-in-out;
+
+                @include respond-to("xl") {
+                    border-radius: 18px;
+                }
             }
 
             h3 {
@@ -83,6 +92,10 @@
                 margin: 0 0 2px 0;
                 line-height: 100%;
                 -webkit-text-fill-color: transparent;
+
+                @include respond-to("xl") {
+                    font-size: 50px;
+                }
             }
 
             p {
@@ -92,6 +105,10 @@
                 font-weight: 500;
                 line-height: normal;
                 @include font-medium;
+
+                @include respond-to("xl") {
+                    @include font18;
+                }
             }
         }
     }

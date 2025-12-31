@@ -61,4 +61,23 @@
     mask-composite: exclude;
     pointer-events: none;
     transition: .3s ease-in-out;
+
+    @include respond-to("xl") {
+        border-radius: 18px;
+    }
+}
+
+@mixin font18 {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+@mixin heading40 {
+    font-size: 40px;
+    line-height: normal;
+}
+
+@mixin heading24 {
+    font-size: 24px;
+    line-height: normal;
 }

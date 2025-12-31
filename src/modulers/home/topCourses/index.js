@@ -50,7 +50,7 @@ export default function TopCourses() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2, duration: 0.5 }}>
                     <div className={styles.tabGroup}>
-                        <button 
+                        <button
                             className={activeTab === 'recorded' ? styles.active : ''}
                             onClick={() => setActiveTab('recorded')}
                         >
@@ -58,13 +58,13 @@ export default function TopCourses() {
                                 Recorded Courses
                             </span>
                         </button>
-                        <button 
+                        <button
                             className={activeTab === 'live' ? styles.active : ''}
                             onClick={() => setActiveTab('live')}
                         >
                             <span>Live Online Courses</span>
                         </button>
-                        <button 
+                        <button
                             className={activeTab === 'inPerson' ? styles.active : ''}
                             onClick={() => setActiveTab('inPerson')}
                         >
@@ -85,7 +85,7 @@ export default function TopCourses() {
                         transition={{ duration: 0.3, ease: 'easeOut' }}
                     >
                         {topCoursesData.map((item, index) => (
-                            <CoursesCard 
+                            <CoursesCard
                                 key={item.id}
                                 title={item.title}
                                 price={item.price}

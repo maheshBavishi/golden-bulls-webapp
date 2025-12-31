@@ -24,6 +24,12 @@
                 line-height: 140%;
                 text-transform: uppercase;
                 @include heading-font;
+
+                @include respond-to("xl") {
+                    @include heading40;
+                    max-width: 80%;
+                    margin: 0 0 30px 0;
+                }
             }
 
             p {
@@ -35,10 +41,18 @@
                 max-width: 787px;
                 margin: 0 0 20px 0;
                 @include font-normal;
+
+                @include respond-to("xl") {
+                    @include font18;
+                }
             }
 
             .buttonAlignment {
                 padding: 17px 0 0 0;
+
+                @include respond-to("xl") {
+                    padding: 10px 0 0 0;
+                }
             }
         }
 

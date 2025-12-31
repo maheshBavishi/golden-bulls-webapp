@@ -11,6 +11,10 @@
     width: 100%;
     background-position: bottom bottom;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
     .title {
         padding: 0 0 30px 0;
 
@@ -31,6 +35,10 @@
         justify-content: center;
         padding: 0 0 48px 0;
 
+        @include respond-to("xl") {
+            padding: 0 0 40px 0;
+        }
+
         .tabGroup {
             border-radius: 86.905px;
             border: 0.869px solid var(--GOLD, #F9F490);
@@ -39,6 +47,10 @@
             display: flex;
             align-items: center;
             gap: 26px;
+
+            @include respond-to("xl") {
+                gap: 20px;
+            }
 
             button {
                 border: none;
@@ -51,6 +63,11 @@
                 background-color: transparent;
                 cursor: pointer;
                 border-radius: 99px;
+
+                @include respond-to("xl") {
+                    @include font18;
+                    padding: 10px 26px;
+                }
 
                 &.active {
                     background: var(--GOLD, linear-gradient(90deg, #F9F490 0%, #E4AB40 25.48%, #FEFBA5 75%, #BD894E 100%));
@@ -91,6 +108,12 @@
             cursor: pointer;
             @include font-medium;
             border: 1px solid #F9F490;
+
+            @include respond-to("xl") {
+                @include font18;
+                padding: 12px 26px;
+                line-height: normal;
+            }
 
             span {
                 @include gradient-text;

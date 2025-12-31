@@ -5,6 +5,10 @@
 .recognizedSection {
     padding: 120px 0;
 
+    @include respond-to("xl") {
+        padding: 100px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 497px 1fr;
@@ -16,6 +20,10 @@
             position: relative;
             padding: 49px 0 49px 0;
             overflow: hidden;
+
+            @include respond-to("xl") {
+                border-radius: 18px;
+            }
 
             &::before {
                 position: absolute;
@@ -59,6 +67,10 @@
                     text-transform: uppercase;
                     text-align: center;
                     margin: 0 0 24px 0;
+
+                    @include respond-to("xl") {
+                        @include heading40;
+                    }
                 }
 
                 p {
@@ -71,6 +83,10 @@
                     margin: 0 auto;
                     max-width: 849px;
                     @include font-normal;
+
+                    @include respond-to("xl") {
+                        @include font18;
+                    }
                 }
             }
         }
@@ -88,6 +104,10 @@
                 padding: 32px;
                 margin: 0 0 24px 0;
                 overflow: hidden;
+
+                @include respond-to("xl") {
+                    border-radius: 18px;
+                }
 
                 &::before {
                     width: 100px;
@@ -130,6 +150,10 @@
                         font-weight: 400;
                         line-height: normal;
                         @include font-normal;
+
+                        @include respond-to("xl") {
+                            @include font18;
+                        }
                     }
 
                     div:last-child {
