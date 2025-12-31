@@ -1,12 +1,12 @@
 'use client'
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from './topCourses.module.scss'
 import ClockIcon from '@/icons/clockIcon'
 import StarIcon from '@/icons/starIcon'
 import Button from '@/components/button'
 import CoursesCard from '@/components/coursesCard'
-
+import { topCoursesData } from '@/constants'
 const CourseImage = '/assets/images/course.png'
 
 const containerVariants = {
@@ -34,6 +34,8 @@ const cardVariants = {
 }
 
 export default function TopCourses() {
+    const [activeTab, setActiveTab] = React.useState('recorded')
+
     return (
         <div className={styles.topCourses}>
             <div className="container-md">
@@ -48,15 +50,24 @@ export default function TopCourses() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2, duration: 0.5 }}>
                     <div className={styles.tabGroup}>
-                        <button className={styles.active}>
+                        <button 
+                            className={activeTab === 'recorded' ? styles.active : ''}
+                            onClick={() => setActiveTab('recorded')}
+                        >
                             <span>
                                 Recorded Courses
                             </span>
                         </button>
-                        <button>
+                        <button 
+                            className={activeTab === 'live' ? styles.active : ''}
+                            onClick={() => setActiveTab('live')}
+                        >
                             <span>Live Online Courses</span>
                         </button>
-                        <button>
+                        <button 
+                            className={activeTab === 'inPerson' ? styles.active : ''}
+                            onClick={() => setActiveTab('inPerson')}
+                        >
                             <span>
                                 In Person Courses
                             </span>
@@ -64,17 +75,29 @@ export default function TopCourses() {
                     </div>
                 </motion.div>
 
-                <motion.div
-                    className={styles.grid}
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    {[1, 2, 3].map((_, index) => (
-                        <CoursesCard key={index} />
-                    ))}
-                </motion.div>
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={activeTab}
+                        className={styles.grid}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                    >
+                        {topCoursesData.map((item, index) => (
+                            <CoursesCard 
+                                key={item.id}
+                                title={item.title}
+                                price={item.price}
+                                author={item.author}
+                                duration={item.duration}
+                                level={item.level}
+                                rating={item.rating}
+                                image={item.image}
+                            />
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
                 <motion.div className={styles.buttonCenter} initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

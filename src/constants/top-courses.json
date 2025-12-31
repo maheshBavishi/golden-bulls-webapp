@@ -1,0 +1,32 @@
+[
+  {
+    "id": "6f1a4b9e-1b2f-4c5a-9e7a-1c3f0c9e8a11",
+    "title": "Forex trading masterclass for absolute beginners, and market enthusiasts",
+    "price": 129,
+    "author": "Johnathan Doe",
+    "duration": "12 Hours",
+    "level": "Beginner",
+    "rating": 4.5,
+    "image": "/assets/images/courses-image-1.png"
+  },
+  {
+    "id": "b8d2c9a3-7f44-4c8e-9d1b-6f2b0e5a3c21",
+    "title": "Forex trading masterclass for absolute beginners, and market enthusiasts",
+    "price": 129,
+    "author": "Johnathan Doe",
+    "duration": "12 Hours",
+    "level": "Beginner",
+    "rating": 4.5,
+    "image": "/assets/images/courses-image-2.png"
+  },
+  {
+    "id": "e3c5f9a4-2d6a-4e9c-8b1f-9a7c4d0e5f31",
+    "title": "Forex trading masterclass for absolute beginners, and market enthusiasts",
+    "price": 129,
+    "author": "Johnathan Doe",
+    "duration": "12 Hours",
+    "level": "Beginner",
+    "rating": 4.5,
+    "image": "/assets/images/courses-image-3.png"
+  }
+]

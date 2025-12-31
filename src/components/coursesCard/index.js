@@ -8,7 +8,7 @@ import StarIcon from '@/icons/starIcon';
 import ClockIcon from '@/icons/clockIcon';
 const CourseImage = '/assets/images/course.png'
 
-export default function CoursesCard({ key }) {
+export default function CoursesCard({ title, price, author, duration, level, rating, image  }) {
     return (
         <motion.div
             className={styles.courseCard}
@@ -51,31 +51,31 @@ export default function CoursesCard({ key }) {
             }}
         >
             <div className={styles.image}>
-                <img src={CourseImage} alt="CourseImage" />
+                <img src={image} alt={title} />
             </div>
 
             <div className={styles.details}>
                 <h3>
-                    Forex trading masterclass for absolute beginners, and market enthusiasts
+                    {title}
                 </h3>
 
                 <div className={styles.secContent}>
-                    <h4>$129</h4>
+                    <h4>${price}</h4>
                     <ul>
-                        <li>Johnathan Doe</li>
+                        <li>{author}</li>
                     </ul>
                 </div>
 
                 <div className={styles.listAlignment}>
                     <div className={styles.time}>
                         <ClockIcon />
-                        <span>12 Hours</span>
+                        <span>{duration}</span>
                     </div>
 
                     <div className={styles.dotButton}>
                         <div className={styles.dot}></div>
                         <button>
-                            <span>Beginner</span>
+                            <span>{level}</span>
                         </button>
                     </div>
 
@@ -83,7 +83,7 @@ export default function CoursesCard({ key }) {
                         <div className={styles.dot}></div>
                         <div className={styles.rating}>
                             <StarIcon />
-                            <span>4.5</span>
+                            <span>{rating}</span>
                         </div>
                     </div>
                 </div>
