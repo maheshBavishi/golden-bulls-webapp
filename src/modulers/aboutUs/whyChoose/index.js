@@ -88,6 +88,7 @@ export default function WhyChoose() {
                                     <img src={RightVec} alt='RightVec' />
                                 </div>
                             </motion.div>
+
                         );
                     })}
                 </div>
