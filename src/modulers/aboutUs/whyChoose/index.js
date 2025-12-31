@@ -66,7 +66,7 @@ export default function WhyChoose() {
                                 <div className={styles.textgrid}>
                                     <div className={styles.content}>
                                         <h2>
-                                            <span className={styles.fontfamily}>{item.step}. </span> 
+                                            <span className={styles.fontfamily}>{item.step}. </span>
                                             <span className={styles.textcolor}>{item.title.split(' ').slice(0, -1).join(' ')}</span> {item.title.split(' ').slice(-1)}
                                         </h2>
                                         <p>
@@ -88,6 +88,7 @@ export default function WhyChoose() {
                                     <img src={RightVec} alt='RightVec' />
                                 </div>
                             </motion.div>
+
                         );
                     })}
                 </div>
