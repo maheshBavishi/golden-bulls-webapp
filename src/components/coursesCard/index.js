@@ -60,7 +60,7 @@ export default function CoursesCard({ title, price, author, duration, level, rat
                 </h3>
 
                 <div className={styles.secContent}>
-                    <h4>${price}</h4>
+                    <h4>{price}</h4>
                     <ul>
                         <li>{author}</li>
                     </ul>
