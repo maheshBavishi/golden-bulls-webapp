@@ -4,16 +4,23 @@ import StarBlackIcon from '@/icons/starBlackIcon';
 import Marquee from "react-fast-marquee";
 
 export default function MarqueeSection() {
+
+    const marqueeTexts = [
+        "Learn From Pro Traders",
+        "Master Technical Analysis",
+        "From Beginner to Pro Trader"
+    ];
+
     return (
         <div className={styles.marqueeSection}>
             <Marquee>
                 {
-                    [...Array(15)].map(() => {
+                    [...Array(25)].map((_, index) => {
                         return (
-                            <div className={styles.icontext}>
+                            <div key={index} className={styles.icontext}>
                                 <StarBlackIcon />
                                 <span>
-                                    Daily Live Market Analysis
+                                    {marqueeTexts[index % marqueeTexts.length]}
                                 </span>
                             </div>
                         )

@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './studentSay.module.scss';
-const ProfileImage = '/assets/images/profile.png';
 const QuoteIcon = '/assets/icons/quote.svg';
 import Marquee from "react-fast-marquee";
+import { studentReviewData } from '@/constants';
 
 export default function StudentSay() {
     return (
@@ -17,21 +17,20 @@ export default function StudentSay() {
             <div className={styles.spacingBottom}>
                 <Marquee speed={50}>
                     {
-                        [...Array(8)].map(() => {
+                        studentReviewData.map((student) => {
                             return (
-                                <div className={styles.box}>
+                                <div key={student.id} className={styles.box}>
                                     <h3>
-                                        Learning with Golden Bulls Academy made investing simple to grasp. The examples were clear,
-                                        engaging, and easy to use, making every lesson feel valuable.
+                                        {student.review}
                                     </h3>
                                     <div className={styles.profile}>
-                                        <img src={ProfileImage} alt='ProfileImage' />
+                                        <img src={student.avatar} alt={student.name} />
                                         <div>
                                             <p>
-                                                Diya Sharma
+                                                {student.name}
                                             </p>
                                             <span>
-                                                Delhi
+                                                {student.location}
                                             </span>
                                         </div>
                                     </div>
@@ -46,21 +45,20 @@ export default function StudentSay() {
             </div>
             <Marquee speed={50} direction='right'>
                 {
-                    [...Array(8)].map(() => {
+                    studentReviewData.map((student) => {
                         return (
-                            <div className={styles.box}>
+                            <div key={student.id} className={styles.box}>
                                 <h3>
-                                    Learning with Golden Bulls Academy made investing simple to grasp. The examples were clear,
-                                    engaging, and easy to use, making every lesson feel valuable.
+                                    {student.review}
                                 </h3>
                                 <div className={styles.profile}>
-                                    <img src={ProfileImage} alt='ProfileImage' />
+                                    <img src={student.avatar} alt={student.name} />
                                     <div>
                                         <p>
-                                            Diya Sharma
+                                            {student.name}
                                         </p>
                                         <span>
-                                            Delhi
+                                            {student.location}
                                         </span>
                                     </div>
                                 </div>

@@ -3,14 +3,12 @@
 @use '../../../scss/font/font.scss' as *;
 
 .onDemandCourses {
-    background: #0C0C0C;
     padding: 120px 0;
 
     .title {
         position: relative;
 
         .text {
-            background: #0C0C0C;
             position: relative;
             z-index: 9;
             padding-right: 24px;
