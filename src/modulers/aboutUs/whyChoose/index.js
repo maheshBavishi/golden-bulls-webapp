@@ -4,6 +4,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import styles from './whyChoose.module.scss';
 const RightVec = '/assets/images/right-layer.png'
 import { whyChooseData } from '@/constants';
+import StarIcon from '@/icons/starIcon';
 
 export default function WhyChoose() {
     const containerRef = useRef(null);
@@ -77,11 +78,13 @@ export default function WhyChoose() {
                                         </div>
                                     </div>
                                     <div className={styles.list}>
-                                        <ul>
-                                            {item.highlights.map((highlight, idx) => (
-                                                <li key={idx}>{highlight}</li>
-                                            ))}
-                                        </ul>
+                                        {item.highlights.map((highlight, idx) => (
+                                            <div className={styles.iconText} key={idx}>
+                                                <span >
+                                                    ✦  {highlight}
+                                                </span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                                 <div className={styles.rightvec}>
