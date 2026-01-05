@@ -7,7 +7,7 @@
       "author": "Johnathan Doe",
       "duration": "12 Hours",
       "rating": 4.5,
-      "level": "easy",
+      "level": "Beginner",
       "image": "/assets/images/courses/record-courses-1.png"
     },
     {
@@ -17,7 +17,7 @@
       "author": "Johnathan Doe",
       "duration": "12 Hours",
       "rating": 4.5,
-      "level": "easy",
+      "level": "Beginner",
       "image": "/assets/images/courses/record-courses-2.png"
     },
     {
@@ -27,7 +27,7 @@
       "author": "Johnathan Doe",
       "duration": "12 Hours",
       "rating": 4.5,
-      "level": "medium",
+      "level": "Beginner",
       "image": "/assets/images/courses/record-courses-3.png"
     }
   ],
@@ -38,9 +38,9 @@
       "title": "Forex New Session Live",
       "price": "$129",
       "author": "Johnathan Doe",
-      "duration": "12 Hours",
+      "duration": "14 Days",
       "rating": 4.5,
-      "level": "easy",
+      "level": "Beginner",
       "image": "/assets/images/courses/live-courses-1.png"
     },
     {
@@ -48,9 +48,9 @@
       "title": "Crypto / Bitcoin Live Trading",
       "price": "$129",
       "author": "Johnathan Doe",
-      "duration": "12 Hours",
+      "duration": "14 Days",
       "rating": 4.5,
-      "level": "medium",
+      "level": "Beginner",
       "image": "/assets/images/courses/live-courses-2.png"
     },
     {
@@ -58,9 +58,9 @@
       "title": "Live Day Trading",
       "price": "$129",
       "author": "Johnathan Doe",
-      "duration": "12 Hours",
+      "duration": "14 Days",
       "rating": 4.5,
-      "level": "hard",
+      "level": "Beginner",
       "image": "/assets/images/courses/live-courses-3.png"
     }
   ],
@@ -73,8 +73,9 @@
       "author": "Johnathan Doe",
       "duration": "12 Hours",
       "rating": 4.5,
-      "level": "easy",
-      "image": "/assets/images/courses/In-person-courses-1.png"
+      "level": "Beginner",
+      "image": "/assets/images/courses/In-person-courses-1.png",
+      "location":"Dubai"
     },
     {
       "id": "4d8a9f2a-9e0a-41ff-9c33-12b6d7b6d808",
@@ -83,8 +84,9 @@
       "author": "Johnathan Doe",
       "duration": "12 Hours",
       "rating": 4.5,
-      "level": "medium",
-      "image": "/assets/images/courses/In-person-courses-2.png"
+      "level": "Beginner",
+      "image": "/assets/images/courses/In-person-courses-2.png",
+      "location":"Dubai"
     },
     {
       "id": "e3a2b7f1-6a9d-4c0a-9e1f-91c44f45d909",
@@ -93,8 +95,9 @@
       "author": "Johnathan Doe",
       "duration": "12 Hours",
       "rating": 4.5,
-      "level": "hard",
-      "image": "/assets/images/courses/In-person-courses-3.png"
+      "level": "Beginner",
+      "image": "/assets/images/courses/In-person-courses-3.png",
+      "location":"Dubai"
     }
   ]
 }

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./topCourses.module.scss";
 import CoursesCard from "@/components/coursesCard";
@@ -68,6 +69,7 @@ export default function TopCourses() {
                 level={item.level}
                 rating={item.rating}
                 image={item.image}
+                location={item?.location || ""}
               />
             ))}
           </motion.div>
@@ -79,9 +81,11 @@ export default function TopCourses() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <button>
-            <span>See All Courses</span>
-          </button>
+          <Link href="/courses">
+            <button>
+              <span>See All Courses</span>
+            </button>
+          </Link>
         </motion.div>
       </div>
     </div>
