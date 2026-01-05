@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./topCourses.module.scss";
 import CoursesCard from "@/components/coursesCard";
 import { topCoursesData } from "@/constants";
+import Link from "next/link";
 
 export default function TopCourses() {
   const [activeTab, setActiveTab] = React.useState("recorded");
@@ -79,9 +80,11 @@ export default function TopCourses() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <button>
-            <span>See All Courses</span>
-          </button>
+          <Link href="/courses">
+            <button>
+              <span>See All Courses</span>
+            </button>
+          </Link>
         </motion.div>
       </div>
     </div>

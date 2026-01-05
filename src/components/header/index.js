@@ -3,6 +3,7 @@ import styles from './header.module.scss';
 import Topbar from '../topbar';
 import Button from '../button';
 import Link from 'next/link';
+import MenuIcon from '@/icons/menuIcon';
 const Logo = '/assets/logo/logo.svg';
 export default function Header() {
   return (
@@ -23,6 +24,9 @@ export default function Header() {
               <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
               <a aria-label='Sign-up'>Sign-up</a>
               <Button text='Login' />
+            </div>
+            <div className={styles.menuIcon}>
+              <MenuIcon />
             </div>
             <div className={styles.line}></div>
           </div>

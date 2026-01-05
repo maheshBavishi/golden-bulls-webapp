@@ -19,6 +19,10 @@
             @include respond-to("xl") {
                 max-width: 90%;
             }
+
+            @include respond-to("sm") {
+                max-width: 100%;
+            }
         }
     }
 
@@ -27,6 +31,10 @@
 
         @include respond-to("xl") {
             padding: 40px 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 48px 0;
         }
 
         p:last-child {
@@ -46,6 +54,14 @@
                 font-size: 16px;
                 line-height: 24px;
             }
+
+            @include respond-to("sm") {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 21.01px;
+                max-width: 400px;
+            }
         }
     }
 
@@ -60,12 +76,40 @@
             gap: 50px;
         }
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @include respond-to("sm") {
+            gap: 48px;
+        }
+
         .griditems:last-child {
             display: flex;
             justify-content: space-between;
 
+            @include respond-to("md") {
+                grid-template-columns: 1fr 1fr 1fr;
+                display: grid;
+                gap: 40px 20px;
+            }
+
+            @include respond-to("sm") {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .newsletter {
                 max-width: 442px;
+
+                @include respond-to("md") {
+                    max-width: 100%;
+                    grid-column: span 3;
+                }
+
+                @include respond-to("sm") {
+                    grid-column: span 2;
+                }
 
                 .checkboxText {
                     padding: 32px 0 0 0;
@@ -159,6 +203,14 @@
                     @include respond-to("xl") {
                         font-size: 16px;
                     }
+
+                    @include respond-to("sm") {
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 28px;
+                        max-width: 392px;
+                    }
                 }
 
                 h3 {
@@ -172,6 +224,14 @@
 
                     @include respond-to("xl") {
                         font-size: 24px;
+                    }
+
+                    @include respond-to("sm") {
+                        margin: 0 0 25px 0;
+                        font-size: 30px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 30px;
                     }
                 }
             }
@@ -196,6 +256,10 @@
                     width: 40px;
                     margin: 0 0 35px 0;
                     height: 2px;
+
+                    @include respond-to("sm") {
+                        margin: 0 0 27px 0;
+                    }
                 }
 
                 a {
@@ -214,6 +278,10 @@
                         font-size: 16px;
                     }
 
+                    @include respond-to("sm") {
+                        font-size: 18px;
+                    }
+
                     &:hover {
                         color: #fff;
                     }
@@ -226,6 +294,10 @@
         }
 
         .footerLogo {
+            @include respond-to("sm") {
+                padding: 0 0 48px 0;
+            }
+
             img {
                 display: block;
                 cursor: pointer;
@@ -237,6 +309,10 @@
             display: flex;
             align-items: center;
             gap: 11px;
+
+            @include respond-to("sm") {
+                padding: 16px 0 0 0;
+            }
 
             .icon {
                 border-radius: 23px;
@@ -258,6 +334,10 @@
         .text {
             padding: 12px 0 25px 0;
 
+            @include respond-to("sm") {
+                padding: 0;
+            }
+
             p {
                 color: #A1A1A1;
                 font-size: 18px;
@@ -275,6 +355,10 @@
     text-align: center;
     background: var(--GOLD, linear-gradient(90deg, #F9F490 0%, #E4AB40 25.48%, #FEFBA5 75%, #BD894E 100%));
 
+    @include respond-to("sm") {
+        padding: 15px 0;
+    }
+
     p {
         color: #000;
         font-size: 16px;
@@ -282,5 +366,12 @@
         font-weight: 500;
         line-height: 28px;
         @include font-normal;
+
+        @include respond-to("sm") {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
     }
 }

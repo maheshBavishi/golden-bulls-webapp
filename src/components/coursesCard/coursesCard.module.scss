@@ -28,6 +28,10 @@
             font-size: 24px;
             font-style: normal;
             font-weight: 500;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
             line-height: normal;
 
             @include respond-to("xl") {

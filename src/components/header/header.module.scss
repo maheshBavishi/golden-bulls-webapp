@@ -21,6 +21,17 @@
 
             @include respond-to("xl") {
                 max-width: 600px;
+            }
+
+            @include respond-to("md") {
+                max-width: calc(100% - 200px);
+                width: 100%;
+                left: 55%;
+                transform: translate(-50%, -50%);
+            }
+
+            @include respond-to("sm") {
+                max-width: calc(100% - 160px);
 
             }
 
@@ -34,8 +45,25 @@
                 height: 9px;
                 border-radius: 50%;
                 content: '';
+
+                @include respond-to("md") {
+                    display: none;
+                }
             }
 
+        }
+
+        .menuIcon {
+            display: none;
+
+            @include respond-to("md") {
+                display: flex;
+                align-items: center;
+            }
+
+            svg {
+                cursor: pointer;
+            }
         }
 
         .logo {
@@ -47,6 +75,10 @@
                 @include respond-to("xl") {
                     max-width: 100px;
                 }
+
+                @include respond-to("sm") {
+                    max-width: 80px;
+                }
             }
         }
 
@@ -54,6 +86,10 @@
             display: flex;
             align-items: center;
             gap: 27px;
+
+            @include respond-to("md") {
+                display: none;
+            }
 
             a {
                 display: block;
