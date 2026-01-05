@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 @font-face {
     font-family: "Bauhaus";
     src: url("../../../public/assets/font/Bauhaus-9M8ny.ttf");
@@ -62,7 +61,7 @@
     pointer-events: none;
     transition: .3s ease-in-out;
 
-    @include respond-to("xl") {
+    @media (max-width:1600px) {
         border-radius: 18px;
     }
 }

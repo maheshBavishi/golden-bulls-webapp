@@ -41,6 +41,8 @@
 
             @include respond-to("xl") {
                 padding: 30px 30px 40px 30px;
+                border-radius: 18px;
+
             }
 
             &:hover {

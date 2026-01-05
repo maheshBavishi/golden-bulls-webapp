@@ -22,7 +22,7 @@
 
         }
 
-        @include respond-to("xl") {
+        @media (max-width:1600px) {
             font-size: 12px 26px;
             font-size: 18px;
         }
