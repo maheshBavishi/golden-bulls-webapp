@@ -12,6 +12,10 @@
         padding: 100px 0;
     }
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &::before {
         width: 200px;
         height: 200px;
@@ -34,6 +38,17 @@
             grid-template-columns: 1fr 620px;
         }
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .griditems:first-child {
+            @include respond-to("md") {
+                order: 2;
+            }
+        }
+
         .image {
             img {
                 display: block;
@@ -50,6 +65,15 @@
             line-height: 140%;
             text-transform: uppercase;
             margin: 0 0 37px 0;
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 140%;
+                text-align: center;
+                margin: 0 0 16px 0;
+                text-transform: uppercase;
+            }
         }
 
         p {
@@ -65,6 +89,14 @@
             @include respond-to("xl") {
                 @include font18;
             }
+
+            @include respond-to("sm") {
+                text-align: center;
+                font-size: 20px;
+                font-weight: 400;
+                margin: 0 0 16px 0;
+                line-height: normal;
+            }
         }
 
         .allIconAlignment {
@@ -78,9 +110,21 @@
                 gap: 10px;
                 padding: 0 0 18px 0;
 
+                @include respond-to("sm") {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    padding: 0 0 4px 0;
+                }
+
                 img {
                     @include respond-to("xl") {
                         max-width: 20px;
+                    }
+
+                    @include respond-to("sm") {
+                        max-width: 24px;
                     }
                 }
 
@@ -95,6 +139,12 @@
 
                     @include respond-to("xl") {
                         @include font18;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 19px;
+                        font-weight: 400;
+                        line-height: normal;
                     }
                 }
             }

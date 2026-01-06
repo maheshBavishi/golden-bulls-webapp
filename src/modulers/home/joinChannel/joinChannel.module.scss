@@ -12,8 +12,18 @@
         gap: 40px;
         align-items: center;
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
         .griditems:first-child {
             padding: 120px 0;
+
+            @include respond-to("sm") {
+                order: 2;
+                padding: 40px 0 60px 0;
+            }
 
             h2 {
                 margin: 0 0 37px 0;
@@ -30,6 +40,14 @@
                     max-width: 80%;
                     margin: 0 0 30px 0;
                 }
+
+                @include respond-to("sm") {
+                    text-align: center;
+                    font-size: 32px;
+                    font-weight: 400;
+                    max-width: 100%;
+                    line-height: 140%;
+                }
             }
 
             p {
@@ -45,6 +63,13 @@
                 @include respond-to("xl") {
                     @include font18;
                 }
+
+                @include respond-to("sm") {
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: normal;
+                }
             }
 
             .buttonAlignment {
@@ -52,6 +77,12 @@
 
                 @include respond-to("xl") {
                     padding: 10px 0 0 0;
+                }
+
+                button {
+                    @include respond-to("sm") {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -73,6 +104,10 @@
                 img {
                     display: block;
                     max-width: 518px;
+
+                    @include respond-to("sm") {
+                        max-width: 320px;
+                    }
                 }
 
             }

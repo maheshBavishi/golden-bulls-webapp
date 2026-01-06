@@ -5,9 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./topCourses.module.scss";
 import CoursesCard from "@/components/coursesCard";
 import { topCoursesData } from "@/constants";
+import DownPrimaryIcon from "@/icons/downPrimaryIcon";
+import classNames from "classnames";
 
 export default function TopCourses() {
   const [activeTab, setActiveTab] = React.useState("recorded");
+  const [toggle, setToggle] = React.useState(false);
 
   return (
     <div className={styles.topCourses}>
@@ -49,7 +52,27 @@ export default function TopCourses() {
             </button>
           </div>
         </motion.div>
-
+        <div className={styles.mobileDropdown}>
+          <div className={styles.relativeDiv}>
+            <button>
+              <span>
+                Recorded Courses
+              </span>
+              <div className={classNames(styles.icons, toggle ? styles.rotate : "")} onClick={() => setToggle(!toggle)}>
+                <DownPrimaryIcon />
+              </div>
+              <div className={classNames(styles.dropdown, toggle ? styles.show : styles.hide)}>
+                <div className={styles.dropdownDesign}>
+                  <div className={styles.dropdownSpacing}>
+                    <p>Recorded Courses</p>
+                    <p>Live Online Courses</p>
+                    <p>In Person Courses</p>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

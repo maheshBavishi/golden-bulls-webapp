@@ -12,6 +12,10 @@
         padding: 100px 0;
     }
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     &::before {
         position: absolute;
         top: 50%;
@@ -37,6 +41,16 @@
             text-transform: uppercase;
             text-align: center;
             @include gradient-text;
+
+            @include respond-to("sm") {
+                max-width: 324px;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 400;
+                margin: 0 auto;
+                line-height: 140%;
+                text-transform: uppercase;
+            }
         }
     }
 
@@ -45,6 +59,10 @@
 
         @include respond-to("xl") {
             padding: 0 0 24px 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 0 0 16px 0;
         }
     }
 
@@ -65,14 +83,31 @@
             border-radius: 18px;
         }
 
+        @include respond-to("sm") {
+            max-width: 252px;
+            width: 252px;
+            padding: 24px;
+            margin-right: 16px;
+            padding: 20px;
+            border-radius: 18px;
+        }
+
         .bottomIcon {
             position: absolute;
             bottom: 0;
             right: 32px;
 
+            @include respond-to("sm") {
+                right: 20px;
+            }
+
             img {
                 max-width: 130px;
                 display: block;
+
+                @include respond-to("sm") {
+                    max-width: 65px;
+                }
             }
         }
 
@@ -84,9 +119,19 @@
             line-height: normal;
             @include font-normal;
             margin: 0 0 32px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
 
             @include respond-to("xl") {
                 @include font18;
+            }
+
+            @include respond-to("sm") {
+                font-size: 16px;
+                line-height: normal;
+                margin: 0 0 16px 0;
             }
         }
 
@@ -101,6 +146,11 @@
                 grid-template-columns: 50px 1fr;
             }
 
+            @include respond-to("sm") {
+                grid-template-columns: 30px 1fr;
+                gap: 5px;
+            }
+
             img {
                 display: block;
                 width: 56px;
@@ -111,6 +161,11 @@
                 @include respond-to("xl") {
                     width: 50px;
                     height: 50px;
+                }
+
+                @include respond-to("sm") {
+                    width: 30px;
+                    height: 30px;
                 }
             }
 
@@ -125,6 +180,14 @@
                 @include respond-to("xl") {
                     @include font18;
                 }
+
+                @include respond-to("sm") {
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+
+
             }
 
             span {
@@ -138,6 +201,12 @@
 
                 @include respond-to("xl") {
                     font-size: 16px;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: normal;
                 }
             }
         }

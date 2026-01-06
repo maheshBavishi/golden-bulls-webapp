@@ -15,8 +15,18 @@
         padding: 100px 0;
     }
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+        background-image: none;
+        background: #0C0C0C;
+    }
+
     .title {
         padding: 0 0 30px 0;
+
+        @include respond-to("sm") {
+            padding: 0 0 24px 0;
+        }
 
         h2 {
             text-align: center;
@@ -27,6 +37,13 @@
             @include gradient-text;
             @include heading-font;
             text-transform: uppercase;
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 140%;
+                text-transform: uppercase;
+            }
         }
     }
 
@@ -37,6 +54,10 @@
 
         @include respond-to("xl") {
             padding: 0 0 40px 0;
+        }
+
+        @include respond-to("sm") {
+            display: none;
         }
 
         .tabGroup {
@@ -97,6 +118,17 @@
         display: flex;
         justify-content: center;
 
+        @include respond-to("sm") {
+            padding: 16px 0 0 0;
+        }
+
+        a {
+            @include respond-to("sm") {
+                display: block;
+                width: 100%;
+            }
+        }
+
         button {
             background-color: transparent;
             padding: 14px 34px;
@@ -115,10 +147,110 @@
                 line-height: normal;
             }
 
+            @include respond-to("sm") {
+                width: 100%;
+                font-size: 20px;
+                padding: 15px 26px;
+                line-height: normal;
+            }
+
             span {
                 @include gradient-text;
             }
         }
+    }
+
+    .mobileDropdown {
+        display: none;
+
+        @include respond-to("sm") {
+            display: flex;
+            justify-content: center;
+        }
+
+        .relativeDiv {
+            button {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background-color: transparent;
+                padding: 12px 30px;
+                border-radius: 99px;
+                border: 2px solid var(--GOLD, #F9F490);
+
+                .icons {
+                    &.rotate {
+                        svg {
+                            transform: rotate(180deg);
+                            transition: .3s ease-in-out;
+                        }
+                    }
+
+                    svg {
+                        transition: .3s ease-in-out;
+                    }
+                }
+
+                span {
+                    @include gradient-text;
+                    font-size: 20.588px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    @include font-bold;
+                }
+
+                .dropdown {
+                    border-radius: 12px;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 55px;
+                    z-index: 99;
+
+                    &.hide {
+                        max-height: 0px;
+                        overflow: hidden;
+                        transition: .3s ease-in-out;
+                    }
+
+                    &.show {
+                        max-height: 100dvh;
+                        overflow: hidden;
+                        transition: .3s ease-in-out;
+                    }
+
+                    .dropdownDesign {
+                        border: 1px solid #666;
+                        background: #0C0C0C;
+                    }
+
+                    .dropdownSpacing {
+                        padding: 16px;
+
+                        p {
+                            color: #FFF;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            @include font-normal;
+                            text-align: left;
+                            margin: 0 0 15px 0;
+                        }
+
+                        p:last-child {
+                            margin: 0;
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+
     }
 
     .grid {
@@ -126,6 +258,14 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 28px;
 
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
+        @include respond-to("sm") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 16px;
+            padding: 40px 0 0 0;
+        }
     }
 }
