@@ -33,7 +33,7 @@ export default function TopCourses() {
               className={activeTab === "recorded" ? styles.active : ""}
               onClick={() => setActiveTab("recorded")}
             >
-              <span>Recorded Courses</span>
+              <span>1.0 Basic to Advance Price Action Course</span>
             </button>
             <button
               className={activeTab === "live" ? styles.active : ""}
@@ -45,7 +45,7 @@ export default function TopCourses() {
               className={activeTab === "inPerson" ? styles.active : ""}
               onClick={() => setActiveTab("inPerson")}
             >
-              <span>In Person Courses</span>
+              <span>Personal Mentorship</span>
             </button>
           </div>
         </motion.div>
