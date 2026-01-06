@@ -5,10 +5,12 @@ import { motion } from 'framer-motion'
 import styles from './coursesCard.module.scss';
 import Button from '../button';
 import StarIcon from '@/icons/starIcon';
-import ClockIcon from '@/icons/clockIcon';
+//import ClockIcon from '@/icons/clockIcon';
 const CourseImage = '/assets/images/course.png'
+const ClockIcon = "/assets/icons/calender-icon.png";
+const Location = "/assets/icons/location-icon.png";
 
-export default function CoursesCard({ title, price, author, duration, level, rating, image  }) {
+export default function CoursesCard({ title, price, author, duration, level, rating, image,location  }) {
     return (
         <motion.div
             className={styles.courseCard}
@@ -68,8 +70,17 @@ export default function CoursesCard({ title, price, author, duration, level, rat
 
                 <div className={styles.listAlignment}>
                     <div className={styles.time}>
-                        <ClockIcon />
-                        <span>{duration}</span>
+                        {location ? (
+                            <>
+                                <img src={Location} alt="location icon"/>
+                                <span>{location}</span>
+                            </>
+                        ) : (
+                            <>
+                                <img src={ClockIcon} alt="clock icon"/>
+                                <span>{duration}</span>
+                            </>
+                        )}
                     </div>
 
                     <div className={styles.dotButton}>

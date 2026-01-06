@@ -79,6 +79,7 @@ export default function OnDemandCourses({ title, data, bgColor = "#0C0C0C" }) {
                   level={item.level}
                   rating={item.rating}
                   image={item.image}
+                  location={item?.location || ""}
                 />
               </Link>
             </motion.div>

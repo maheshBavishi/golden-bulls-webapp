@@ -2,13 +2,10 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
-    Autoplay,
-    EffectCoverflow,
     Pagination,
     Navigation,
 } from "swiper/modules";
 import styles from './blogSection.module.scss';
-import Button from '@/components/button';
 import LeftIcon from '@/icons/leftIcon';
 const BlogImage = '/assets/images/blog-image.png';
 export default function BlogSection() {
@@ -23,82 +20,86 @@ export default function BlogSection() {
                     </h2>
                 </div>
                 <div className={styles.relative}>
-                    <Swiper
-                        effect={"coverflow"}
-                        grabCursor={true}
-                        loop={true}
-                        slidesPerView={"3"}
+                    <div className={styles.paginationWrapper}>
+                        <Swiper
+                            effect={"coverflow"}
+                            grabCursor={true}
+                            loop={true}
+                            slidesPerView={"3"}
 
-                        onBeforeInit={(swiper) => {
-                            swiper.params.navigation = swiper.params.navigation || {};
-                        }}
-                        onInit={(swiper) => {
-                            if (swiper.navigation) {
-                                swiper.navigation.init();
-                                swiper.navigation.update();
-                            }
-                        }}
-                        navigation={{ prevEl, nextEl }}
-                        spaceBetween={28}
-                        speed={800}
+                            onBeforeInit={(swiper) => {
+                                swiper.params.navigation = swiper.params.navigation || {};
+                            }}
+                            onInit={(swiper) => {
+                                if (swiper.navigation) {
+                                    swiper.navigation.init();
+                                    swiper.navigation.update();
+                                }
+                            }}
+                            navigation={{ prevEl, nextEl }}
+                            spaceBetween={28}
+                            speed={800}
 
-                        pagination={false}
-                        modules={[Pagination, Navigation]}
-                        breakpoints={{
-                            1800: {
-                                slidesPerView: 3,
-                            },
+                            pagination={{
+                                clickable:true
+                            }}
+                            modules={[Pagination, Navigation]}
+                            breakpoints={{
+                                1800: {
+                                    slidesPerView: 3,
+                                },
 
-                            1200: {
-                                slidesPerView: 3,
-                            },
-                            1024: {
-                                slidesPerView: 2,
-                            },
-                            576: {
-                                slidesPerView: 1,
-                                spaceBetween: 30,
-                            },
-                            480: {
-                                slidesPerView: 1,
-                                spaceBetween: 12,
-                            },
-                            360: {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                            },
-                        }}
-                    >
-                        {
-                            [...Array(5)].map(() => {
-                                return (
-                                    <SwiperSlide>
-                                        <div className={styles.card}>
-                                            <div className={styles.cardImage}>
-                                                <img src={BlogImage} alt='BlogImage' />
-                                            </div>
-                                            <div className={styles.details}>
-                                                <h3>
-                                                    Forex trading masterclass for absolute beginners, and market enthusiasts
-                                                </h3>
-                                                <div className={styles.twoContent}>
-                                                    <span>
-                                                        Johnathan Doe
-                                                    </span>
-                                                    <ul>
-                                                        <li>
-                                                            19 November 2023
-                                                        </li>
-                                                    </ul>
+                                1200: {
+                                    slidesPerView: 3,
+                                },
+                                1024: {
+                                    slidesPerView: 2,
+                                },
+                                576: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 30,
+                                },
+                                480: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 12,
+                                },
+                                360: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                },
+                            }}
+                        >
+                            {
+                                [...Array(5)].map((_, index) => {
+                                    return (
+                                        <SwiperSlide key={index}>
+                                            <div className={styles.card}>
+                                                <div className={styles.cardImage}>
+                                                    <img src={BlogImage} alt='BlogImage' />
+                                                </div>
+                                                <div className={styles.details}>
+                                                    <h3>
+                                                        Forex trading masterclass for absolute beginners, and market enthusiasts
+                                                    </h3>
+                                                    <div className={styles.twoContent}>
+                                                        <span>
+                                                            Johnathan Doe
+                                                        </span>
+                                                        <ul>
+                                                            <li>
+                                                                19 November 2023
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                            })
-                        }
+                                        </SwiperSlide>
+                                    )
+                                })
+                            }
 
-                    </Swiper>
+                        </Swiper>
+                    </div>
                     <div className={styles.twoButtonAlignment}>
                         <button
                             ref={setPrevEl}

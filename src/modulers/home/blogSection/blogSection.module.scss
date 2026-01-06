@@ -28,6 +28,29 @@
         position: relative;
     }
 
+    .paginationWrapper {
+        :global(.swiper-pagination) {
+            position: relative;
+            margin-top: 40px;
+            bottom: 0;
+        }
+
+        :global(.swiper-pagination-bullet) {
+            width: 10px;
+            height: 10px;
+            background: #666;
+            opacity: 1;
+            margin: 0 6px;
+            transition: all 0.3s ease;
+        }
+
+        :global(.swiper-pagination-bullet-active) {
+            background: linear-gradient(90deg, #F9F490 0%, #E4AB40 25.48%, #FEFBA5 75%, #BD894E 100%);
+            width: 10px;
+            height: 10px;
+        }
+    }
+
 
     .twoButtonAlignment {
         @include respond-to("xl") {
