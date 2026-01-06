@@ -9,6 +9,14 @@
     width: 100%;
     height: 100dvh;
 
+    @include respond-to("md") {
+        height: auto;
+    }
+
+    @include respond-to("sm") {
+        background-image: url('/assets/images/mobile-hero.png');
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 777px 1fr;
@@ -17,6 +25,12 @@
 
         @include respond-to("xl") {
             grid-template-columns: 1fr 550px;
+            gap: 20px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            height: auto;
         }
 
         .griditems:last-child {
@@ -45,12 +59,28 @@
                     line-height: 28px;
                     max-width: 639px;
                 }
+
+                @include respond-to("sm") {
+                    margin: 0 auto 16px auto;
+                    max-width: 400px;
+                    font-size: 20px;
+                    font-style: normal;
+                    text-align: center;
+                    font-weight: 400;
+                    line-height: normal;
+                }
             }
 
             .buttonAlignment {
                 display: flex;
                 align-items: center;
                 gap: 16px;
+
+                @include respond-to("sm") {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
 
                 button {
                     padding: 16px 40px;
@@ -59,6 +89,12 @@
                         font-size: 18px;
                         height: 48px;
                         padding: 12px 26px;
+                    }
+
+                    @include respond-to("sm") {
+                        width: 100%;
+                        font-size: 20px;
+                        height: 56px;
                     }
                 }
 
@@ -80,6 +116,10 @@
                         padding: 12px 26px;
                     }
 
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                    }
+
                     &:hover {
                         background-color: #fff;
                         color: #000;
@@ -98,6 +138,20 @@
                 text-transform: uppercase;
                 @include heading-font;
 
+                @include respond-to("md") {
+                    font-size: 58px;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 140%;
+                    max-width: 400px;
+                    margin: 0 auto 16px auto;
+                    text-align: center;
+                }
+
                 span {
                     @include gradient-text;
                 }
@@ -107,12 +161,39 @@
         .griditems {
             height: 100%;
 
-            .image {
 
+
+            .image {
+                @include respond-to("md") {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                img[alt="BullImage"] {
+                    @include respond-to("sm") {
+                        display: none;
+                    }
+                }
+
+                img[alt="MobileBullImage"] {
+                    display: none;
+
+                    @include respond-to("sm") {
+                        display: block;
+                    }
+                }
 
                 img {
                     display: block;
                     width: 100%;
+
+                    @include respond-to("md") {
+                        width: 70%;
+                    }
+
+                    @include respond-to("sm") {
+                        width: 100%;
+                    }
                 }
             }
         }

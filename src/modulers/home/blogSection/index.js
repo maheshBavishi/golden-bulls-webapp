@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     Pagination,
@@ -7,6 +8,7 @@ import {
 } from "swiper/modules";
 import styles from './blogSection.module.scss';
 import LeftIcon from '@/icons/leftIcon';
+import Link from 'next/link';
 const BlogImage = '/assets/images/blog-image.png';
 export default function BlogSection() {
     const [prevEl, setPrevEl] = useState(null);
@@ -41,7 +43,7 @@ export default function BlogSection() {
                             speed={800}
 
                             pagination={{
-                                clickable:true
+                                clickable: true
                             }}
                             modules={[Pagination, Navigation]}
                             breakpoints={{
@@ -115,6 +117,21 @@ export default function BlogSection() {
 
                         </button>
                     </div>
+                </div>
+                <div>
+                    <motion.div
+                        className={styles.buttonCenter}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                        <Link href="/courses">
+                            <button>
+                                <span>See All Blogs</span>
+                            </button>
+                        </Link>
+                    </motion.div>
                 </div>
             </div>
         </div>

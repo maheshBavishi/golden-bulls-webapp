@@ -3,8 +3,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './herobanner.module.scss'
 import Button from '@/components/button'
+import Link from 'next/link'
 
 const BullImage = '/assets/images/bull.png'
+const MobileBullImage = '/assets/images/mobile-bull.png'
 
 /* Left Content Animation */
 const textVariants = {
@@ -69,7 +71,9 @@ export default function Herobanner() {
                                 className={styles.buttonAlignment}
                                 variants={itemVariants}
                             >
-                                <Button text="Explore Courses" className={styles.fillbutton} />
+                                <Link href="/courses">
+                                    <Button text="Explore Courses" className={styles.fillbutton} />
+                                </Link>
                                 <button className={styles.outlineButton}>
                                     Download App
                                 </button>
@@ -85,6 +89,7 @@ export default function Herobanner() {
                             animate="animate"
                         >
                             <img src={BullImage} alt="BullImage" />
+                            <img src={MobileBullImage} alt="MobileBullImage" />
                         </motion.div>
                     </div>
 

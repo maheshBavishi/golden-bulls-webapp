@@ -26,5 +26,9 @@
             font-size: 12px 26px;
             font-size: 18px;
         }
+
+        @media (max-width:576px) {
+            font-size: 20px;
+        }
     }
 }

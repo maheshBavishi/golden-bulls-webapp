@@ -11,6 +11,10 @@
         padding: 8px 20px;
     }
 
+    @include respond-to("md") {
+        padding: 6px 15px;
+    }
+
     p {
         color: #000;
         font-size: 22.303px;
@@ -22,6 +26,21 @@
 
         @include respond-to("xl") {
             font-size: 16px;
+        }
+
+        br {
+            display: none;
+
+            @include respond-to("md") {
+                display: block;
+            }
+        }
+
+        @include respond-to("md") {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
         }
     }
 }

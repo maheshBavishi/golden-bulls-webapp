@@ -19,6 +19,7 @@
         align-items: center;
         gap: 30px;
         white-space: nowrap;
+        padding-right: 30px;
 
         @include respond-to("xl") {
             gap: 24px;
