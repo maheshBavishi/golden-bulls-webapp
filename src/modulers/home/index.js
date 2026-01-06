@@ -14,6 +14,7 @@ import JoinChannel from './joinChannel'
 import RecognizedSection from './recognizedSection'
 import BlogSection from './blogSection'
 import GetCertified from './getCertified'
+import DownloadApp from '@/components/downloadApp'
 
 export default function HomePage() {
     return (
@@ -33,6 +34,7 @@ export default function HomePage() {
             <GetCertified />
             <ClassroominYourPocket />
             <FaqSection />
+            {/* <DownloadApp /> */}
         </div>
     )
 }

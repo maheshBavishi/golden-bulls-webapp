@@ -164,4 +164,33 @@
             }
         }
     }
+
+    .buttonCenter {
+        padding: 48px 0 0 0;
+        display: flex;
+        justify-content: center;
+
+        button {
+            background-color: transparent;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            @include font-medium;
+            border: 1px solid #F9F490;
+
+            @include respond-to("xl") {
+                @include font18;
+                padding: 12px 26px;
+                line-height: normal;
+            }
+
+            span {
+                @include gradient-text;
+            }
+        }
+    }
 }
