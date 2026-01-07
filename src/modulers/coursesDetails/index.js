@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import styles from "./coursesDetails.module.scss";
 import CoursesDetailsBanner from "./coursesDetailsBanner";
 import CourseContent from "./courseContent";

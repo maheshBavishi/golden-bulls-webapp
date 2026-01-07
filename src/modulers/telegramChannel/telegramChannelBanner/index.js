@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from './telegramChannelBanner.module.scss';
 const BullImage = '/assets/images/telegram-bull.png'
+const BullImageMobile = '/assets/images/bull-telegram.png'
 import Button from '@/components/button'
 import { motion } from 'framer-motion'
 
@@ -80,6 +81,7 @@ export default function TelegramChannelBanner() {
               animate="animate"
             >
               <img src={BullImage} alt="BullImage" />
+              <img src={BullImageMobile} alt="BullImageMobile" />
             </motion.div>
           </div>
 

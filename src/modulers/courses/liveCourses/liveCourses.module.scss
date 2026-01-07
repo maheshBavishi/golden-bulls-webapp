@@ -5,6 +5,10 @@
 .liveCourses {
     padding: 120px 0;
 
+    @include respond-to("xl") {
+        padding: 90px 0;
+    }
+
     .title {
         position: relative;
 

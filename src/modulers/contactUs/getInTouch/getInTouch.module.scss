@@ -5,15 +5,37 @@
 .getInTouch {
     padding: 120px 0;
 
+    @include respond-to("xl") {
+        padding: 90px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 670px 1fr;
         gap: 40px;
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
         .blackBox {
             border-radius: 26.667px;
             background: #141414;
             padding: 40px;
+
+            @include respond-to("sm") {
+                padding: 24px;
+            }
 
             h4 {
                 @include font-medium;
@@ -23,6 +45,12 @@
                 font-weight: 500;
                 line-height: 42.667px;
                 margin: 0 0 24px 0;
+
+                @include respond-to("sm") {
+                    font-size: 32px;
+                    font-weight: 500;
+                    line-height: 42.667px;
+                }
             }
 
             .checkboxText {
@@ -31,11 +59,20 @@
                 gap: 16px;
                 padding: 0 0 26px 0;
 
+                @include respond-to("sm") {
+                    padding: 0 0 22px 0;
+                }
+
                 input[type="checkbox"] {
                     width: 21px;
                     height: 21px;
                     margin: 0;
                     padding: 0;
+
+                    @include respond-to("sm") {
+                        width: 18px;
+                        height: 18px;
+                    }
                 }
 
                 label {
@@ -45,6 +82,10 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 26.667px;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                    }
 
                     span {
                         @include gradient-text;
@@ -70,6 +111,14 @@
                     @include font-normal;
                     outline: none;
 
+                    @include respond-to("sm") {
+                        height: 55px;
+                        padding: 0 16px;
+                        font-size: 16px;
+                        line-height: 24px;
+                        border-radius: 12px;
+                    }
+
                     &:focus {
                         outline: none;
                     }
@@ -91,6 +140,11 @@
                     @include font-normal;
                     outline: none;
 
+                    @include respond-to("sm") {
+                        border-radius: 12px;
+                        padding: 16px;
+                    }
+
                     &:focus {
                         outline: none;
                     }
@@ -103,6 +157,11 @@
                     font-weight: 400;
                     line-height: 32px;
                     @include font-normal;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
                 }
             }
         }
@@ -117,6 +176,11 @@
                 @include gradient-text;
                 margin: 0 0 50px 0;
                 @include heading-font;
+
+                @include respond-to("sm") {
+                    @include heading32;
+                    margin: 0 0 32px 0;
+                }
             }
 
             .followus {
@@ -124,6 +188,11 @@
                 align-items: center;
                 padding: 50px 0 0 0;
                 gap: 32px;
+
+                @include respond-to("sm") {
+                    padding: 32px 0 0 0;
+                    gap: 20px;
+                }
 
                 span {
                     display: block;
@@ -133,6 +202,13 @@
                     font-weight: 500;
                     @include font-medium;
                     line-height: 42.667px;
+
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 42.667px;
+                    }
                 }
 
                 .socialIcon {
@@ -140,9 +216,17 @@
                     align-items: center;
                     gap: 20px;
 
+                    @include respond-to("sm") {
+                        gap: 16px;
+                    }
+
                     img {
                         display: block;
                         cursor: pointer;
+
+                        @include respond-to("sm") {
+                            max-width: 40px;
+                        }
                     }
                 }
             }
@@ -171,6 +255,12 @@
                     max-width: 435px;
                     font-weight: 400;
                     line-height: 32px;
+
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 30px;
+                    }
                 }
 
                 a {
@@ -182,6 +272,12 @@
                     max-width: 435px;
                     font-weight: 400;
                     line-height: 32px;
+
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 26px;
+                    }
                 }
 
 
@@ -192,6 +288,12 @@
                     font-style: normal;
                     font-weight: 500;
                     line-height: 40px;
+
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 26px;
+                    }
                 }
             }
         }

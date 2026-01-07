@@ -5,11 +5,29 @@
 .telegramCommunity {
     padding: 46px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 681px 1fr;
         align-items: center;
         gap: 0px;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+        }
+
+        @include respond-to("sm") {
+            gap: 40px;
+        }
+
+        .griditems:first-child {
+            @include respond-to("sm") {
+                order: 2;
+            }
+        }
 
         h2 {
             @include gradient-text;
@@ -20,6 +38,11 @@
             line-height: 140%;
             text-transform: uppercase;
             @include heading-font;
+
+            @include respond-to("sm") {
+                @include heading32;
+                margin: 0 0 24px 0;
+            }
         }
 
         ol {
@@ -33,11 +56,22 @@
                 font-weight: 400;
                 line-height: normal;
                 @include font-normal;
+
+                @include respond-to("sm") {
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: normal;
+                    padding: 0 0 4px 0;
+                }
             }
         }
 
         .spacing {
             padding: 0 0 95px 0;
+
+            @include respond-to("sm") {
+                padding: 0 0 32px 0;
+            }
         }
 
         .image {

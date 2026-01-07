@@ -86,6 +86,9 @@ export default function WhyChoose() {
                                             </div>
                                         ))}
                                     </div>
+                                    <div className={styles.mobileicon}>
+                                        <img src={item.image} alt={item.title} />
+                                    </div>
                                 </div>
                                 <div className={styles.rightvec}>
                                     <img src={RightVec} alt='RightVec' />

@@ -12,7 +12,7 @@
     background-position: bottom bottom;
 
     @include respond-to("xl") {
-        padding: 100px 0;
+        padding: 90px 0;
     }
 
     @include respond-to("sm") {
