@@ -6,6 +6,8 @@ import Button from '@/components/button'
 import { motion } from 'framer-motion'
 
 const AddressIcon = '/assets/icons/Address.svg'
+const CallIcon = '/assets/icons/call.svg'
+const GmailIcon = '/assets/icons/gmail.svg'
 const FacebookIcon = '/assets/icons/facebook-outline.svg'
 const InstagramIcon = '/assets/icons/instagram-outline.svg'
 const TwitterIcon = '/assets/icons/twitter-outline.svg'
@@ -91,7 +93,7 @@ export default function GetInTouch() {
                         </motion.div>
 
                         <motion.div className={styles.icongrid} variants={fadeUp}>
-                            <img src={AddressIcon} alt="AddressIcon" />
+                            <img src={CallIcon} alt="CallIcon" />
                             <div>
                                 <h3>Contact Details</h3>
                                 <a href="callto:+180052554589">
@@ -101,7 +103,7 @@ export default function GetInTouch() {
                         </motion.div>
 
                         <motion.div className={styles.icongrid} variants={fadeUp}>
-                            <img src={AddressIcon} alt="AddressIcon" />
+                            <img src={GmailIcon} alt="GmailIcon" />
                             <div>
                                 <h3>Email Us</h3>
                                 <a href="mailto:test@email.com">

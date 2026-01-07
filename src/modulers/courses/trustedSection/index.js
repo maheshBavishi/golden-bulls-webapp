@@ -1,9 +1,7 @@
 'use client';
 import React from 'react'
 import styles from './trustedSection.module.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-const BlackVecImage = '/assets/images/black-vec.png';
-import { EffectCoverflow, Autoplay } from 'swiper/modules';
+import Marquee from 'react-fast-marquee';
 
 const team = [
     '/assets/images/team1.png',
@@ -39,32 +37,16 @@ export default function TrustedSection() {
             <div className={styles.sliderWrap}>
                 <div className={styles.top}></div>
                 <div className={styles.bottom}></div>
-                    <Swiper
-                        modules={[Autoplay]}
-                        grabCursor
-                        centeredSlides
-                        spaceBetween={28}
-                        speed={400}
-                        slidesPerView={5.5}
-                        loop={true}
-                        autoplay={{
-                            disableOnInteraction: false,
-                        }}
-                        className={styles.swiper}
-                        breakpoints={{
-                            0: { slidesPerView: 1.5 },
-                            640: { slidesPerView: 3 },
-                            1024: { slidesPerView: 5 },
-                        }}
-                    >
-                        {team.map((img, i) => (
-                            <SwiperSlide key={i} className={styles.slide}>
-                                <div className={styles.card}>
-                                    <img src={img} alt="team" />
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                <Marquee>
+                    {team.map((img, i) => (
+                        <div key={i} className={styles.slide}>
+                            <div className={styles.card}>
+                                <img src={img} alt="team" />
+                            </div>
+                        </div>
+                    ))}
+                </Marquee>
+
             </div>
         </div>
     )

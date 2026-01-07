@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from './contactUsBanner.module.scss';
 const BullImage = '/assets/images/contact-bull.png'
+const BullImageMobile = '/assets/images/contact-bull-mobile.png'
 import Button from '@/components/button'
 import { motion } from 'framer-motion'
 
@@ -80,6 +81,7 @@ export default function ContactUsBanner() {
                             animate="animate"
                         >
                             <img src={BullImage} alt="BullImage" />
+                            <img src={BullImageMobile} alt="BullImageMobile" />
                         </motion.div>
                     </div>
 

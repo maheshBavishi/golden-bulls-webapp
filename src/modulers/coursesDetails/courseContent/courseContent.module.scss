@@ -5,6 +5,10 @@
 .courseContent {
     padding: 120px 0 72px 0;
 
+    @include respond-to("sm") {
+        padding: 0 0 60px 0;
+    }
+
     .title {
         padding: 0 0 32px 0;
 
@@ -16,6 +20,11 @@
             text-transform: uppercase;
             @include gradient-text;
             @include heading-font;
+
+            @include respond-to("sm") {
+                @include heading32;
+                text-align: center;
+            }
         }
     }
 
@@ -25,6 +34,11 @@
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 0 0 100px 0;
+
+        @include respond-to("sm") {
+            padding: 0 0 60px 0;
+            max-width: 100%;
+        }
 
         .box {
             border-radius: 12px;
@@ -47,6 +61,10 @@
                 .spacing {
                     padding: 24px 16px;
                     border-top: 1px solid rgb(255, 255, 255, .1);
+
+                    @include respond-to("sm") {
+                        padding: 20px 16px;
+                    }
 
                     p {
                         margin: 0 0 20px 0;
@@ -71,6 +89,10 @@
                 align-items: center;
                 justify-content: space-between;
 
+                @include respond-to("sm") {
+                    padding: 16px;
+                }
+
 
                 h3 {
                     color: rgba(255, 255, 255, 0.70);
@@ -80,6 +102,13 @@
                     line-height: normal;
                     @include font-bold;
 
+                    @include respond-to("sm") {
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+
                     span {
                         color: rgba(255, 255, 255, 0.70);
                         font-size: 20px;
@@ -87,6 +116,12 @@
                         font-weight: 400;
                         line-height: normal;
                         @include font-normal;
+
+                        @include respond-to("sm") {
+                            font-size: 16px;
+                            display: block;
+                            padding: 5px 0 0 0;
+                        }
                     }
                 }
 
@@ -97,6 +132,12 @@
                     font-weight: 500;
                     line-height: normal;
                     @include font-medium;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
                 }
             }
 

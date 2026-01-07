@@ -11,6 +11,10 @@
         padding: 30px 0 100px 0;
     }
 
+    @include respond-to("sm") {
+        padding: 0px 0 60px 0;
+    }
+
 
 
     .grid {
@@ -21,6 +25,14 @@
 
         @include respond-to("xl") {
             gap: 50px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+        }
+
+        @include respond-to("sm") {
+            gap: 40px;
         }
 
         .griditems {
@@ -35,6 +47,14 @@
                 max-width: 280px;
                 overflow: hidden;
                 max-height: 250px;
+
+                @include respond-to("sm") {
+                    max-width: 280px;
+                    max-height: 159px;
+                    position: absolute;
+                    top: 2%;
+                    left: 65%;
+                }
 
                 .box {
                     border-radius: 24px;
@@ -54,6 +74,16 @@
                         border-radius: 18px;
                     }
 
+                    @include respond-to("sm") {
+                        max-width: 170px;
+                        margin: 0 0 14px 0;
+                        padding: 9px;
+                        border-radius: 14px;
+                        grid-template-columns: 59px 1fr;
+                        gap: 9px;
+                    }
+
+
                     &:hover {
 
                         &::after {
@@ -66,6 +96,14 @@
                         }
 
 
+                    }
+
+                    img {
+                        display: block;
+
+                        @include respond-to("sm") {
+                            max-width: 59px;
+                        }
                     }
 
                     @keyframes shimmer {
@@ -109,6 +147,10 @@
                         @include respond-to("xl") {
                             border-radius: 18px;
                         }
+
+                        @include respond-to("sm") {
+                            border-radius: 14px;
+                        }
                     }
 
                     h4 {
@@ -119,9 +161,15 @@
                         line-height: normal;
                         text-transform: uppercase;
                         @include heading-font;
+
+                        @include respond-to("sm") {
+                            font-size: 11.976px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
                     }
 
-                    .icon {}
                 }
             }
         }
@@ -140,6 +188,14 @@
                 @include respond-to("xl") {
                     @include heading40;
                 }
+
+                @include respond-to("sm") {
+                    font-size: 32px;
+                    line-height: 140%;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin: 0 0 16px 0;
+                }
             }
 
             p {
@@ -154,6 +210,12 @@
 
                 @include respond-to("xl") {
                     @include font18;
+                }
+
+                @include respond-to("sm") {
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: normal;
                 }
             }
         }

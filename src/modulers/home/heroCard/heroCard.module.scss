@@ -6,10 +6,23 @@
     background: #0C0C0C;
     padding: 32px 0;
 
+    @include respond-to("sm") {
+        padding: 60px 0 40px 0;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
 
         .griditems {
             padding: 32px 32px 42px 32px;
@@ -96,6 +109,11 @@
                 @include respond-to("xl") {
                     font-size: 50px;
                 }
+
+                @include respond-to("sm") {
+                    font-size: 72px;
+                    line-height: 72px;
+                }
             }
 
             p {
@@ -108,6 +126,11 @@
 
                 @include respond-to("xl") {
                     @include font18;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 24px;
+                    line-height: normal;
                 }
             }
         }

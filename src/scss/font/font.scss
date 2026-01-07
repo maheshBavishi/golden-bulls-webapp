@@ -80,3 +80,9 @@
     font-size: 24px;
     line-height: normal;
 }
+
+@mixin heading32 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 140%;
+}

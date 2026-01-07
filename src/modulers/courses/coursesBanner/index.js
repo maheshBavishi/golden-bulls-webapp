@@ -5,6 +5,7 @@ import styles from './coursesBanner.module.scss';
 import Button from '@/components/button'
 
 const BullImage = '/assets/images/courses-bull.png'
+const BullImageMobile = '/assets/images/courses-bull-mobile.png'
 
 /* Left Content Animation */
 const textVariants = {
@@ -82,6 +83,7 @@ export default function CoursesBanner() {
               animate="animate"
             >
               <img src={BullImage} alt="BullImage" />
+              <img src={BullImageMobile} alt="BullImageMobile" />
             </motion.div>
           </div>
 

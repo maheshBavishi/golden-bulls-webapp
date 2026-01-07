@@ -5,6 +5,14 @@
 .onDemandCourses {
     padding: 120px 0;
 
+    @include respond-to("xl") {
+        padding: 90px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+    }
+
     .title {
         position: relative;
 
@@ -13,6 +21,11 @@
             z-index: 9;
             padding-right: 24px;
             width: fit-content;
+
+            @include respond-to("sm") {
+                width: 100%;
+                padding-right: 0;
+            }
         }
 
         .line {
@@ -23,6 +36,10 @@
             left: 0;
             height: 2px;
             background: #C29255;
+
+            @include respond-to("sm") {
+                display: none;
+            }
         }
 
         h2 {
@@ -34,6 +51,11 @@
             position: relative;
             line-height: 140%;
             text-transform: uppercase;
+
+            @include respond-to("sm") {
+                @include heading32;
+                text-align: center;
+            }
         }
     }
 
@@ -43,5 +65,15 @@
         gap: 24px;
         padding: 60px 0 0 0;
 
+        @include respond-to("md") {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 40px 0 0 0;
+        }
     }
 }

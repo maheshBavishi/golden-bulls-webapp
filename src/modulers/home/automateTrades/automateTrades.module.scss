@@ -10,11 +10,21 @@
     padding: 120px 0;
 
     @include respond-to("xl") {
-        padding: 100px 0;
+        padding: 90px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+        background: none;
+        background-color: #000;
     }
 
     .title {
         padding: 0 0 60px 0;
+
+        @include respond-to("sm") {
+            padding: 0 0 40px 0;
+        }
 
         h2 {
             text-align: center;
@@ -25,6 +35,13 @@
             @include gradient-text;
             @include heading-font;
             text-transform: uppercase;
+
+            @include respond-to("sm") {
+                text-align: center;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 140%;
+            }
         }
     }
 
@@ -33,10 +50,19 @@
     }
 
     .paginationWrapper {
+        @include respond-to("sm") {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
         :global(.swiper-pagination) {
             position: relative;
             margin-top: 40px;
             bottom: 0;
+
+            @include respond-to("sm") {
+                margin-top: 30px;
+            }
         }
 
         :global(.swiper-pagination-bullet) {
@@ -84,6 +110,11 @@
             gap: 40px;
             padding: 40px 0 0 0;
         }
+
+        @include respond-to("sm") {
+            display: none;
+        }
+
     }
 
     .rightButton {
@@ -101,6 +132,8 @@
             right: 0;
             transform: none;
         }
+
+
 
 
         svg {
@@ -122,11 +155,19 @@
             padding: 40px 0 20px 0;
         }
 
+        @include respond-to("sm") {
+            padding: 24px 0 20px 0;
+        }
+
         .btn {
             padding: 24px 0 0 0;
 
             @include respond-to("xl") {
                 padding: 20px 0 0 0;
+            }
+
+            @include respond-to("sm") {
+                padding: 12px 0 0 0;
             }
 
             button {
@@ -187,6 +228,11 @@
             max-width: 280px;
             background: #0C0C0C;
 
+            @include respond-to("sm") {
+                padding: 20px;
+                max-width: 248px;
+            }
+
             h4 {
                 color: #E1E1E1;
                 font-size: 20px;
@@ -194,6 +240,12 @@
                 font-style: normal;
                 font-weight: 500;
                 line-height: normal;
+
+                @include respond-to("sm") {
+                    font-size: 20px;
+                    font-style: normal;
+                    line-height: normal;
+                }
 
                 span {
                     color: #F33;
@@ -208,6 +260,12 @@
                 font-weight: 500;
                 line-height: normal;
                 @include font-medium;
+
+                @include respond-to("sm") {
+                    font-size: 20px;
+                    font-style: normal;
+                    line-height: normal;
+                }
 
                 small {
                     font-size: 14px;

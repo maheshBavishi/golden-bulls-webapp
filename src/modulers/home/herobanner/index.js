@@ -6,6 +6,7 @@ import Button from '@/components/button'
 import Link from 'next/link'
 
 const BullImage = '/assets/images/bull.png'
+const BullImageMobile = '/assets/images/hero-banner-bull.png'
 const MobileBullImage = '/assets/images/mobile-bull.png'
 
 /* Left Content Animation */
@@ -89,7 +90,7 @@ export default function Herobanner() {
                             animate="animate"
                         >
                             <img src={BullImage} alt="BullImage" />
-                            <img src={MobileBullImage} alt="MobileBullImage" />
+                            <img src={BullImageMobile} alt="BullImageMobile" />
                         </motion.div>
                     </div>
 

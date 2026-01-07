@@ -15,6 +15,13 @@
 
     @include respond-to("sm") {
         background-image: url('/assets/images/mobile-hero.png');
+        padding: 160px 0 60px 0;
+    }
+
+    :global(.container-md) {
+        @include respond-to("sm") {
+            padding: 0;
+        }
     }
 
     .grid {
@@ -36,6 +43,33 @@
         .griditems:last-child {
             display: flex;
             align-items: flex-end;
+
+            @include respond-to("sm") {
+                position: relative;
+            }
+
+            &:before {
+                @include respond-to("sm") {
+                    position: absolute;
+                    content: "";
+                    bottom: 0;
+                    width: 300px;
+                    height: 300px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 302px;
+                    opacity: 0.8;
+                    background: #FFEEBF;
+                    filter: blur(200px);
+                }
+            }
+        }
+
+        .griditems:first-child {
+            @include respond-to("sm") {
+                order: 2;
+                padding: 0 20px;
+            }
         }
 
         .text {
@@ -43,6 +77,10 @@
 
             @include respond-to("xl") {
                 padding: 250px 0 0 0;
+            }
+
+            @include respond-to("sm") {
+                padding: 0;
             }
 
             p {
@@ -175,7 +213,7 @@
                     }
                 }
 
-                img[alt="MobileBullImage"] {
+                img[alt="BullImageMobile"] {
                     display: none;
 
                     @include respond-to("sm") {

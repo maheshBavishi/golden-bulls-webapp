@@ -9,8 +9,16 @@
         padding: 0 0 100px 0;
     }
 
+    @include respond-to("sm") {
+        padding: 0 0 60px 0;
+    }
+
     .title {
         padding: 0 0 60px 0;
+
+        @include respond-to("sm") {
+            padding: 0 0 40px 0;
+        }
 
         h2 {
             @include gradient-text;
@@ -21,6 +29,13 @@
             font-weight: 400;
             line-height: 140%;
             text-transform: uppercase;
+
+            @include respond-to("sm") {
+                text-align: center;
+                font-size: 32px;
+                font-weight: 400;
+                line-height: 140%;
+            }
         }
     }
 
@@ -29,10 +44,19 @@
     }
 
     .paginationWrapper {
+        @include respond-to("sm") {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
         :global(.swiper-pagination) {
             position: relative;
             margin-top: 40px;
             bottom: 0;
+
+            @include respond-to("sm") {
+                margin-top: 20px;
+            }
         }
 
         :global(.swiper-pagination-bullet) {
@@ -58,6 +82,10 @@
             justify-content: center;
             gap: 40px;
             padding: 40px 0 0 0;
+        }
+
+        @include respond-to("sm") {
+            display: none;
         }
     }
 
@@ -110,6 +138,10 @@
         .details {
             padding: 30px 0 0 0;
 
+            @include respond-to("sm") {
+                padding: 12px 0 0 0;
+            }
+
             h3 {
                 color: #FFF;
                 font-size: 24px;
@@ -122,12 +154,23 @@
                 @include respond-to("xl") {
                     font-size: 20px;
                 }
+
+                @include respond-to("sm") {
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: normal;
+                }
             }
 
             .twoContent {
                 display: flex;
                 align-items: center;
                 gap: 14px;
+
+                @include respond-to("sm") {
+                    justify-content: center;
+                }
 
                 span {
                     display: block;
@@ -137,6 +180,11 @@
                     font-weight: 500;
                     line-height: normal;
                     @include font-medium;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                        line-height: normal;
+                    }
                 }
 
                 ul {
@@ -147,12 +195,21 @@
                     font-style: normal;
                     font-weight: 500;
                     line-height: normal;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                        line-height: normal;
+                    }
                 }
             }
         }
 
         .cardImage {
             height: 234px;
+
+            @include respond-to("sm") {
+                height: 170px;
+            }
 
             img {
                 display: block;
@@ -170,6 +227,21 @@
         display: flex;
         justify-content: center;
 
+        @include respond-to("sm") {
+            max-width: 300px;
+            padding: 20px 0 0 0;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        a {
+            display: block;
+
+            @include respond-to("sm") {
+                width: 100%;
+            }
+        }
+
         button {
             background-color: transparent;
             padding: 14px 34px;
@@ -186,6 +258,10 @@
                 @include font18;
                 padding: 12px 26px;
                 line-height: normal;
+            }
+
+            @include respond-to("sm") {
+                width: 100%;
             }
 
             span {
