@@ -9,9 +9,9 @@ export default function Courses() {
     return (
         <div>
             <CoursesBanner />
-            <OnDemandCourses title='Recorded courses' data={topCoursesData.recorded} bgColor='#0C0C0C' />
+            <OnDemandCourses title='1.0 Basic to Advance Price Action Course' data={topCoursesData.recorded} bgColor='#0C0C0C' />
             <OnDemandCourses title="Live online courses" data={topCoursesData.live} bgColor='#000' />
-            <OnDemandCourses title='In-person courses' data={topCoursesData.inPerson} bgColor='#0C0C0C' />
+            <OnDemandCourses title='Personal Mentorship' data={topCoursesData.inPerson} bgColor='#0C0C0C' />
             <TrustedSection />
             <ClassroominYourPocket spacingRemove />
             <FaqSection />
