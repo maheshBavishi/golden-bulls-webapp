@@ -22,7 +22,7 @@ export default function Header() {
               <Link href="/courses" aria-label='Courses'>Courses</Link>
               <Link href="/blog" aria-label='Blogs'>Blogs</Link>
               <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
-              <a aria-label='Sign-up'>Sign-up</a>
+              <Link href="/register" aria-label='Sign-up'>Sign-up</Link>
               <Button text='Login' />
             </div>
             <div className={styles.menuIcon}>
