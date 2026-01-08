@@ -3,6 +3,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './latestBlog.module.scss'
 import Pagination from '@/components/pagination'
+import DownPrimaryIcon from '@/icons/downPrimaryIcon'
+import classNames from 'classnames'
 
 const BlogCardImage = '/assets/images/blog-card.png'
 
@@ -34,6 +36,8 @@ const cardVariants = {
 }
 
 export default function LatestBlog() {
+    const [toggle, setToggle] = React.useState(false);
+
     return (
         <div className={styles.latestBlog}>
             <div className="container-md">
@@ -44,10 +48,22 @@ export default function LatestBlog() {
                         </div>
                     </div>
                     <div className={styles.line}></div>
-                    <div className={styles.buttonAlignent}>
+                    <div className={styles.relativeDiv}>
                         <button>
-                            <span>All Categories</span>
-                            {/* SVG unchanged */}
+                            <span>
+                                All Categories
+                            </span>
+                            <div className={classNames(styles.icons, toggle ? styles.rotate : "")} onClick={() => setToggle(!toggle)}>
+                                <DownPrimaryIcon />
+                            </div>
+                            <div className={classNames(styles.dropdown, toggle ? styles.show : styles.hide)}>
+                                <div className={styles.dropdownDesign}>
+                                    <div className={styles.dropdownSpacing}>
+                                        <p>All Categories</p>
+                                        <p>All Categories</p>
+                                    </div>
+                                </div>
+                            </div>
                         </button>
                     </div>
                 </div>

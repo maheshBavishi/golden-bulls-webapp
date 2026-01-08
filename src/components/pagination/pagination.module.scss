@@ -8,6 +8,10 @@
     gap: 20px;
     justify-content: center;
 
+    @include respond-to("sm") {
+        gap: 10px;
+    }
+
     .round:first-child,
     .round:last-child {
         color: var(--White, #FFF);
@@ -17,6 +21,12 @@
         border: none;
         line-height: normal;
         @include font-medium;
+
+        @include respond-to("sm") {
+            font-size: 14px;
+            font-style: normal;
+            line-height: normal;
+        }
     }
 
     .round {
@@ -36,6 +46,13 @@
         line-height: normal;
         @include font-bold;
         transition: .3s ease-in-out;
+
+        @include respond-to("sm") {
+            width: 40px;
+            height: 40px;
+            font-size: 14px;
+            line-height: normal;
+        }
 
         &:hover {
             border: 1px solid var(--GOLD, #F9F490);

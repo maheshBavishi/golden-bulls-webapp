@@ -1,6 +1,7 @@
 'use client'
 import styles from './blogBanner.module.scss';
 const BullImage = '/assets/images/blog-bull.png'
+const BullImageMobile = '/assets/images/bull-blog-mobile.png'
 const FlowerImage = '/assets/images/flower.png'
 import Button from '@/components/button'
 import { motion } from 'framer-motion'
@@ -79,6 +80,7 @@ export default function BlogBanner() {
                             animate="animate"
                         >
                             <img src={BullImage} alt="BullImage" />
+                            <img src={BullImageMobile} alt="BullImageMobile" />
                         </motion.div>
                     </div>
                     <div className={styles.bottomSideImage}>

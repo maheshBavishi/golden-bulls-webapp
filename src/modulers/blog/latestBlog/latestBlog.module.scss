@@ -5,34 +5,119 @@
 .latestBlog {
     padding: 120px 0 0 0;
 
+    @include respond-to("sm") {
+        padding: 90px 0 0 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0;
+        background-color: #0C0C0C;
+    }
+
     .sectionHeaderAlignment {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
 
-        .buttonAlignent {
-            background-color: #000;
-            padding-left: 24px;
+        @include respond-to("sm") {
+            display: block;
+        }
+
+        .relativeDiv {
             position: relative;
+            background-color: #000;
             z-index: 9;
+            padding-left: 39px;
+
+            @include respond-to("sm") {
+                padding-left: 0;
+                display: flex;
+                justify-content: center;
+                background-color: transparent;
+            }
 
             button {
+                position: relative;
                 display: flex;
+                cursor: pointer;
                 align-items: center;
                 gap: 8px;
                 background-color: transparent;
-                padding: 12px 29px;
-                border-radius: 42.891px;
+                padding: 12px 30px;
+                border-radius: 99px;
                 border: 2px solid var(--GOLD, #F9F490);
 
+                .icons {
+                    cursor: pointer;
+
+                    &.rotate {
+                        svg {
+                            transform: rotate(180deg);
+                            transition: .3s ease-in-out;
+                        }
+                    }
+
+                    svg {
+                        transition: .3s ease-in-out;
+                    }
+                }
+
                 span {
-                    @include font-bold;
+                    @include gradient-text;
                     font-size: 20.588px;
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
-                    @include gradient-text;
+                    @include font-bold;
+                }
+
+                .dropdown {
+                    border-radius: 12px;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 55px;
+                    z-index: 99;
+
+                    &.hide {
+                        max-height: 0px;
+                        overflow: hidden;
+                        transition: .3s ease-in-out;
+                    }
+
+                    &.show {
+                        max-height: 100dvh;
+                        overflow: hidden;
+                        transition: .3s ease-in-out;
+                    }
+
+                    .dropdownDesign {
+                        border: 1px solid #666;
+                        background: #0C0C0C;
+                        border-radius: 12px;
+                    }
+
+                    .dropdownSpacing {
+                        padding: 16px;
+
+                        p {
+                            color: #FFF;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            @include font-normal;
+                            text-align: left;
+                            margin: 0 0 15px 0;
+                        }
+
+                        p:last-child {
+                            margin: 0;
+                        }
+
+
+                    }
                 }
             }
         }
@@ -45,6 +130,10 @@
             left: 0;
             height: 2px;
             background: #C29255;
+
+            @include respond-to("md") {
+                display: none;
+            }
         }
 
         .title {
@@ -56,6 +145,12 @@
                 z-index: 9;
                 padding-right: 24px;
                 width: fit-content;
+
+                @include respond-to("sm") {
+                    width: 100%;
+                    padding-right: 0;
+                    background-color: transparent;
+                }
             }
 
 
@@ -69,6 +164,12 @@
                 position: relative;
                 line-height: 140%;
                 text-transform: uppercase;
+
+                @include respond-to("sm") {
+                    @include heading32;
+                    text-align: center;
+                    margin: 0 0 24px 0;
+                }
             }
         }
     }
@@ -79,9 +180,25 @@
         gap: 40px 22px;
         padding: 60px 0 0 0;
 
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 32px;
+            padding: 40px 0 0 0;
+        }
+
         .griditems {
             .details {
                 padding: 20px 0 0 0;
+
+                @include respond-to("sm") {
+                    padding: 16px 0 0 0;
+                }
 
                 h3 {
                     @include font-medium;
@@ -130,7 +247,12 @@
                     display: block;
                     object-fit: cover;
                     height: 192px;
+                    width: 100%;
                     border-radius: 12px;
+
+                    @include respond-to("sm") {
+                        height: 224px;
+                    }
                 }
             }
         }
@@ -138,5 +260,9 @@
 
     .paginationTopAlignment {
         padding: 60px 0 0 0;
+
+        @include respond-to("sm") {
+            padding: 40px 0 0 0;
+        }
     }
 }
