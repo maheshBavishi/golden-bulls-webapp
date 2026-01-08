@@ -11,19 +11,19 @@ const LineImage = '/assets/images/line.png'
 
 const offerData = [
     {
-        title: 'Recorded courses',
+        title: '1.0 Basic to Advance Price Action Course',
         description:
             'Real time market breakdowns and actionable insights to improve your decision making.',
         icon: ComputerIcon,
     },
     {
-        title: 'Live Online Courses',
+        title: '2.0 SMC + ICT Advance Course',
         description:
             'Participate in dynamic, scheduled live online sessions led by an expert instructor.',
         icon: GroupComputerIcon,
     },
     {
-        title: 'In Person Courses',
+        title: 'Personal Mentorship',
         description:
             'Engage in face to face learning conducted in a dedicated physical training environment.',
         icon: PersonIcon,
