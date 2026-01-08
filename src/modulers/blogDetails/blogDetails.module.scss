@@ -3,13 +3,139 @@
 @use '../../scss/font/font.scss' as *;
 
 .blogDetailsAlignment {
-    padding: 200px 0 0 0;
+    padding: 200px 0 60px 0;
+    background-image: url('/assets/images/blog-details.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
 
     .blogImage {
         img {
             display: block;
             width: 100%;
             border-radius: 12px;
+        }
+    }
+
+    .blogtitle {
+        padding: 30px 0 0 0;
+
+        .twoText {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            p {
+                color: #FFF;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                @include font-normal;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0 0 0 15px;
+
+                li {
+                    color: #FFF;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    @include font-normal;
+                    line-height: 150%;
+                }
+            }
+        }
+
+        h2 {
+            color: #D09C3D;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            text-transform: uppercase;
+            margin: 0 0 16px 0;
+            @include heading-font;
+            @include gradient-text;
+        }
+    }
+}
+
+.tableofContentDetails {
+    padding: 60px 0;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 56px;
+
+        .griditems {
+            .box {
+                border-radius: 24px;
+                background: #0C0C0C;
+                padding: 24px;
+                position: sticky;
+                top: 120px;
+
+                ol {
+                    padding: 24px 0 0 24px;
+                    margin: 0;
+
+                    li:last-child {
+                        padding: 0;
+                    }
+
+                    li {
+                        color: #FFF;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        padding: 0 0 10px 0;
+                        @include font-normal;
+                    }
+                }
+
+                .boxHeader {
+                    padding: 0 0 24px 0;
+                    border-bottom: 1px solid #3C3C3C;
+
+                    h2 {
+                        font-size: 28px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 150%;
+                        @include gradient-text;
+                    }
+                }
+            }
+
+            h3 {
+                color: #FFF;
+                @include heading-font;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                margin: 0 0 16px 0;
+                text-transform: uppercase;
+            }
+
+            .spacer {
+                padding: 48px 0 0 0;
+            }
+
+            p {
+                color: rgba(255, 255, 255, 0.70);
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                @include font-normal;
+            }
         }
     }
 }
