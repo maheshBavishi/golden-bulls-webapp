@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './joinChannel.module.scss'
 import Button from '@/components/button'
+import Link from 'next/link'
 
 const VecImage = '/assets/images/vec-yellow.png'
 const TelegramImage = '/assets/images/telegram.png'
@@ -85,10 +86,12 @@ export default function JoinChannel() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <Button
-                                text="Join Our Community"
-                                className={styles.buttonAlignment}
-                            />
+                            <Link href="/telegram-channel">
+                                <Button
+                                    text="Join Our Community"
+                                    className={styles.buttonAlignment}
+                                />
+                            </Link>
                         </motion.div>
                     </motion.div>
 
