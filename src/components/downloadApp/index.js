@@ -7,11 +7,11 @@ import classNames from 'classnames'
 const AppStoreImage = '/assets/icons/app-store.svg'
 const GooglePlayImage = '/assets/icons/google-play.svg'
 
-export default function DownloadApp() {
+export default function DownloadApp({ isOpen, onClose }) {
     return (
-        <div className={classNames(styles.downloadAppWrapper, styles.open)}>
+        <div className={classNames(styles.downloadAppWrapper, isOpen && styles.open)}>
             <div className={styles.modal}>
-                <div className={styles.close}>
+                <div className={styles.close} onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                         <path
                             fill="#C2C2C2"

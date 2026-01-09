@@ -1,10 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './contactUsBanner.module.scss';
 const BullImage = '/assets/images/contact-bull.png'
 const BullImageMobile = '/assets/images/contact-bull-mobile.png'
 import Button from '@/components/button'
 import { motion } from 'framer-motion'
+import DownloadApp from '@/components/downloadApp'
 
 /* Left Content Animation */
 const textVariants = {
@@ -39,6 +40,8 @@ const bullVariants = {
     },
 }
 export default function ContactUsBanner() {
+    const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
     return (
         <div className={styles.aboutUsBanner}>
             <div className="container-md">
@@ -66,7 +69,7 @@ export default function ContactUsBanner() {
                                 variants={itemVariants}
                             >
                                 <Button text="Talk to our team" className={styles.fillbutton} />
-                                <button className={styles.outlineButton}>
+                                <button className={styles.outlineButton} onClick={() => setIsDownloadModalOpen(true)}>
                                     Download App
                                 </button>
                             </motion.div>
@@ -87,6 +90,7 @@ export default function ContactUsBanner() {
 
                 </div>
             </div>
+            <DownloadApp isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
         </div>
     )
 }

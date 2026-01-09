@@ -1,10 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './telegramChannelBanner.module.scss';
 const BullImage = '/assets/images/telegram-bull.png'
 const BullImageMobile = '/assets/images/bull-telegram.png'
 import Button from '@/components/button'
 import { motion } from 'framer-motion'
+import DownloadApp from '@/components/downloadApp'
 
 /* Left Content Animation */
 const textVariants = {
@@ -39,6 +40,8 @@ const bullVariants = {
   },
 }
 export default function TelegramChannelBanner() {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
   return (
     <div className={styles.herobanner}>
       <div className="container-md">
@@ -66,7 +69,7 @@ export default function TelegramChannelBanner() {
                 variants={itemVariants}
               >
                 <Button text="Subscribe Now" className={styles.fillbutton} />
-                <button className={styles.outlineButton}>
+                <button className={styles.outlineButton} onClick={() => setIsDownloadModalOpen(true)}>
                   Download App
                 </button>
               </motion.div>
@@ -87,6 +90,7 @@ export default function TelegramChannelBanner() {
 
         </div>
       </div>
+      <DownloadApp isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
     </div>
   )
 }
