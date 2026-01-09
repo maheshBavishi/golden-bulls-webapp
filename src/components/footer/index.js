@@ -7,7 +7,7 @@ const FacebookIcon = '/assets/icons/facebook.svg';
 const TwitterIcon = '/assets/icons/twitter.svg';
 const InstagramIcon = '/assets/icons/instagram.svg';
 const LinkdinIcon = '/assets/icons/linkdin.svg';
-const FooterBottomText = '/assets/icons/footer-bottom-text.svg';
+const FooterBottomText = '/assets/images/footer-bottom-text.svg';
 export default function Footer() {
   return (
     <div>

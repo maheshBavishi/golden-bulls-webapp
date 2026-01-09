@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './successfullyPassword.module.scss';
-import Input from '@/components/input';
 const LoginBullImage = '/assets/images/login-bull.png';
 const LockImage = '/assets/images/lock-round.png';
-const EmailIcon = '/assets/icons/email.svg';
 export default function SuccessfullyPassword() {
     return (
         <div className={styles.successfullyPassword}>
