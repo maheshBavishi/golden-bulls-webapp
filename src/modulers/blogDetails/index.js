@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './blogDetails.module.scss';
 import FaqSection from '../home/faqSection';
+import SimilarBlogs from './similarBlogs';
 const BlogDetailsImage = '/assets/images/blog-details-banner.png';
 export default function BlogDetails() {
     return (
@@ -118,6 +119,7 @@ export default function BlogDetails() {
                     </div>
                 </div>
             </div>
+            <SimilarBlogs />
             <FaqSection />
 
         </>

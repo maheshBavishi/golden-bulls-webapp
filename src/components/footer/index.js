@@ -83,7 +83,7 @@ export default function Footer() {
                   </div>
                 </div>
                 <div className={styles.checkboxText}>
-                  <input checked type='checkbox' />
+                  <input type='checkbox' />
                   <label>
                     I agree to the Privacy Policy
                   </label>
