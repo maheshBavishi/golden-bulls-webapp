@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './downloadApp.module.scss'
 import classNames from 'classnames'
+const Logo = '/assets/logo/logo.svg';
 
 const AppStoreImage = '/assets/icons/app-store.svg'
 const GooglePlayImage = '/assets/icons/google-play.svg'
@@ -11,7 +12,8 @@ export default function DownloadApp({ isOpen, onClose }) {
     return (
         <div className={classNames(styles.downloadAppWrapper, isOpen && styles.open)}>
             <div className={styles.modal}>
-                <div className={styles.close} onClick={onClose}>
+                <div className={styles.modalHeader} onClick={onClose}>
+                    <img src={Logo} alt='Logo' />
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                         <path
                             fill="#C2C2C2"
