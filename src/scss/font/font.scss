@@ -66,6 +66,32 @@
     }
 }
 
+@mixin gold-border {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    /* border width */
+
+    background: linear-gradient(180deg,
+            #F9F490 0%,
+            #000000 100%);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+
+    @media (max-width: 1600px) {
+        border-radius: 18px;
+    }
+}
+
 @mixin font18 {
     font-size: 18px;
     line-height: 28px;

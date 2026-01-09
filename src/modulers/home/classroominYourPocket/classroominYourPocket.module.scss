@@ -150,7 +150,12 @@
             content: '';
             background: #D9D9D9;
             filter: blur(200px);
-            animation: floatAndRotateBefore 6s ease-in-out infinite;
+
+            @include respond-to("sm") {
+                background: #D9D9D9;
+                opacity: .3;
+                filter: blur(80px);
+            }
         }
 
         &::after {
@@ -162,7 +167,12 @@
             content: '';
             background: #D9D9D9;
             filter: blur(200px);
-            animation: floatAndRotateAfter 6s ease-in-out infinite;
+
+            @include respond-to("sm") {
+                background: #D9D9D9;
+                opacity: .3;
+                filter: blur(80px);
+            }
         }
     }
 }

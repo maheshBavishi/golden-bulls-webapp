@@ -78,6 +78,10 @@
                         font-size: 20px;
                     }
 
+                    @include respond-to("sm") {
+                        white-space: nowrap;
+                    }
+
                     img {
                         @include respond-to("xl") {
                             max-width: 40px;

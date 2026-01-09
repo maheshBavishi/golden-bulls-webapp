@@ -5,6 +5,10 @@ body {
   background: #000;
 }
 
+html {
+  user-select: none;
+}
+
 h1,
 h2,
 h3,
@@ -34,4 +38,26 @@ a {
   max-width: calc(1440px + 40px);
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.user-panel-layout {
+  display: flex;
+  background: #000;
+}
+
+.sidebar-panel {
+  width: 260px;
+}
+
+.children-layout {
+  width: calc(100% - 260px);
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none; /* Chrome, Safari */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none; /* optional */
 }
