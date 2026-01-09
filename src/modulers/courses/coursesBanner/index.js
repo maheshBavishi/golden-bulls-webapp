@@ -1,8 +1,9 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './coursesBanner.module.scss';
 import Button from '@/components/button'
+import DownloadApp from '@/components/downloadApp'
 
 const BullImage = '/assets/images/courses-bull.png'
 const BullImageMobile = '/assets/images/courses-bull-mobile.png'
@@ -40,6 +41,8 @@ const bullVariants = {
   },
 }
 export default function CoursesBanner() {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
   return (
     <div className={styles.coursesBanner}>
       <div className="container-md">
@@ -68,7 +71,7 @@ export default function CoursesBanner() {
                 className={styles.buttonAlignment}
                 variants={itemVariants}
               >
-                <button className={styles.outlineButton}>
+                <button className={styles.outlineButton} onClick={() => setIsDownloadModalOpen(true)}>
                   Download App
                 </button>
               </motion.div>
@@ -89,6 +92,7 @@ export default function CoursesBanner() {
 
         </div>
       </div>
+      <DownloadApp isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
     </div>
   )
 }

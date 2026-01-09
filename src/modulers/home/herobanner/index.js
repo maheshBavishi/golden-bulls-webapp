@@ -1,9 +1,10 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './herobanner.module.scss'
 import Button from '@/components/button'
 import Link from 'next/link'
+import DownloadApp from '@/components/downloadApp'
 
 const BullImage = '/assets/images/bull.png'
 const BullImageMobile = '/assets/images/hero-banner-bull.png'
@@ -44,6 +45,8 @@ const bullVariants = {
 
 
 export default function Herobanner() {
+    const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
     return (
         <div className={styles.herobanner}>
             <div className="container-md">
@@ -75,7 +78,7 @@ export default function Herobanner() {
                                 <Link href="/courses">
                                     <Button text="Explore Courses" className={styles.fillbutton} />
                                 </Link>
-                                <button className={styles.outlineButton}>
+                                <button className={styles.outlineButton} onClick={() => setIsDownloadModalOpen(true)}>
                                     Download App
                                 </button>
                             </motion.div>
@@ -96,6 +99,7 @@ export default function Herobanner() {
 
                 </div>
             </div>
+            <DownloadApp isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
         </div>
     )
 }

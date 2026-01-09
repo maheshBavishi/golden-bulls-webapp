@@ -1,10 +1,13 @@
 'use client'
+import React, { useState } from 'react'
 import styles from './blogBanner.module.scss';
 const BullImage = '/assets/images/blog-bull.png'
 const BullImageMobile = '/assets/images/bull-blog-mobile.png'
 const FlowerImage = '/assets/images/flower.png'
 import Button from '@/components/button'
 import { motion } from 'framer-motion'
+import DownloadApp from '@/components/downloadApp'
+
 /* Left Content Animation */
 const textVariants = {
     hidden: { opacity: 0, y: 60 },
@@ -38,6 +41,8 @@ const bullVariants = {
     },
 }
 export default function BlogBanner() {
+    const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+
     return (
         <div className={styles.aboutUsBanner}>
             <div className="container-md">
@@ -65,7 +70,7 @@ export default function BlogBanner() {
                                 variants={itemVariants}
                             >
                                 <Button text="Explore Courses" className={styles.fillbutton} />
-                                <button className={styles.outlineButton}>
+                                <button className={styles.outlineButton} onClick={() => setIsDownloadModalOpen(true)}>
                                     Download App
                                 </button>
                             </motion.div>
@@ -89,6 +94,7 @@ export default function BlogBanner() {
 
                 </div>
             </div>
+            <DownloadApp isOpen={isDownloadModalOpen} onClose={() => setIsDownloadModalOpen(false)} />
         </div>
     )
 }
