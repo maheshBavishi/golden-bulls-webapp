@@ -10,11 +10,26 @@
     background-position: bottom;
     width: 100%;
 
+    @include respond-to("md") {
+        height: auto;
+    }
+
+    @include respond-to("sm") {
+        background-image: url('/assets/images/mobile-common.png');
+        padding: 160px 0 0 0;
+        position: relative;
+    }
+
     .blogImage {
         img {
             display: block;
             width: 100%;
             border-radius: 12px;
+
+            @include respond-to("sm") {
+                height: 500px;
+                object-fit: cover;
+            }
         }
     }
 
@@ -26,6 +41,10 @@
             align-items: center;
             gap: 20px;
 
+            @include respond-to("sm") {
+                justify-content: center;
+            }
+
             p {
                 color: #FFF;
                 font-size: 24px;
@@ -33,6 +52,10 @@
                 font-weight: 400;
                 line-height: 150%;
                 @include font-normal;
+
+                @include respond-to("sm") {
+                    font-size: 16px;
+                }
             }
 
             ul {
@@ -46,6 +69,10 @@
                     font-weight: 400;
                     @include font-normal;
                     line-height: 150%;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -60,6 +87,11 @@
             margin: 0 0 16px 0;
             @include heading-font;
             @include gradient-text;
+
+            @include respond-to("sm") {
+                @include heading32;
+                text-align: center;
+            }
         }
     }
 }
@@ -71,6 +103,11 @@
         display: grid;
         grid-template-columns: 400px 1fr;
         gap: 56px;
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
 
         .griditems {
             .box {
@@ -96,6 +133,10 @@
                         line-height: 150%;
                         padding: 0 0 10px 0;
                         @include font-normal;
+
+                        @include respond-to("sm") {
+                            font-size: 18px;
+                        }
                     }
                 }
 
@@ -109,6 +150,7 @@
                         font-weight: 500;
                         line-height: 150%;
                         @include gradient-text;
+
                     }
                 }
             }
@@ -122,10 +164,19 @@
                 line-height: 150%;
                 margin: 0 0 16px 0;
                 text-transform: uppercase;
+
+                @include respond-to("sm") {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
             }
 
             .spacer {
                 padding: 48px 0 0 0;
+
+                @include respond-to("sm") {
+                    padding: 30px 0 0 0;
+                }
             }
 
             p {
@@ -135,6 +186,11 @@
                 font-weight: 400;
                 line-height: 150%;
                 @include font-normal;
+
+                @include respond-to("sm") {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
             }
         }
     }
