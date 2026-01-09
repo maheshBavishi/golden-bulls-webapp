@@ -36,7 +36,7 @@ export default function TopCourses() {
               className={activeTab === "recorded" ? styles.active : ""}
               onClick={() => setActiveTab("recorded")}
             >
-              <span>1.0 Basic to Advance Price Action Course</span>
+              <span>Recorded Courses</span>
             </button>
             <button
               className={activeTab === "live" ? styles.active : ""}

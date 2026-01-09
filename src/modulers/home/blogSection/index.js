@@ -126,7 +126,7 @@ export default function BlogSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
-                        <Link href="/courses">
+                        <Link href="/blog">
                             <button>
                                 <span>See All Blogs</span>
                             </button>

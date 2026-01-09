@@ -46,7 +46,7 @@
                 position: absolute;
                 bottom: 30px;
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translateX(-50%) !important;
 
                 // @include respond-to("xl") {
                 //     left: 40%;
