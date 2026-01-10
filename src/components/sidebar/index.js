@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
 import styles from './sidebar.module.scss';
 import UserIcon from '@/icons/userIcon';
 import DownIcon from '@/icons/downIcon';
@@ -11,12 +12,23 @@ import PaymentIcon from '@/icons/paymentIcon';
 import ReferIcon from '@/icons/referIcon';
 import classNames from 'classnames';
 const Logo = '/assets/logo/logo.svg';
+import { getCookie } from '../../../cookie';
+import Link from 'next/link';
 
 export default function Sidebar() {
+    const [user, setUser] = useState(null);
+        useEffect(() => {
+            const user = getCookie('user');    
+            const userName = (user && JSON.parse(user)?.name);
+            setUser(userName);
+        }, []);
+
     return (
         <aside className={styles.sidebar}>
             <div className={styles.sidebarlogo}>
-                <img src={Logo} alt='Logo' />
+                <Link href='/'>
+                    <img src={Logo} alt='Logo' />
+                </Link>
             </div>
             <div className={styles.asideBody}>
                 <div className={classNames(styles.active, styles.menu)}>
@@ -63,8 +75,7 @@ export default function Sidebar() {
                     </div>
                     <div className={styles.textgrid}>
                         <span>
-                            Steve
-                            Harrington
+                            {user}
                         </span>
                         <UpIcon />
                     </div>

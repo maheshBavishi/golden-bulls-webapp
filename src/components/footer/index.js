@@ -1,14 +1,52 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react'
 import styles from './footer.module.scss';
 import Button from '../button';
 import Link from 'next/link';
+import { createNewsLetter } from '@/services/dashboard';
+import toast from 'react-hot-toast';
+
 const FooterLogo = '/assets/logo/footer-logo.svg';
 const FacebookIcon = '/assets/icons/facebook.svg';
 const TwitterIcon = '/assets/icons/twitter.svg';
 const InstagramIcon = '/assets/icons/instagram.svg';
 const LinkdinIcon = '/assets/icons/linkdin.svg';
 const FooterBottomText = '/assets/images/footer-bottom-text.svg';
+
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isAgreed, setIsAgreed] = useState(false);
+
+  const handleSubscribe = async () => {
+    if (!email.trim()) {
+      toast.error("Please enter your email.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await createNewsLetter({ email });
+      if (res.success) {
+        toast.success(res.message || "Subscribed successfully!");
+        setEmail("");
+        setIsAgreed(false);
+      } else {
+        toast.error(res.message || "Failed to subscribe.");
+      }
+    } catch (error) {
+      console.error("Newsletter error:", error);
+      toast.error(error?.response?.data?.message || "Something went wrong.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       <footer className={styles.footer}>
@@ -77,13 +115,27 @@ export default function Footer() {
                   spam - promise.
                 </p>
                 <div className={styles.input}>
-                  <input type='text' placeholder='Enter your Email' />
+                  <input
+                    type='text'
+                    placeholder='Enter your Email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                   <div className={styles.rightAlignment}>
-                    <Button text="Submit" className={styles.buttonDesign} />
+                    <Button
+                      text={loading ? "Submitting..." : "Submit"}
+                      className={styles.buttonDesign}
+                      onClick={handleSubscribe}
+                      disabled={loading}
+                    />
                   </div>
                 </div>
                 <div className={styles.checkboxText}>
-                  <input type='checkbox' />
+                  <input
+                    type='checkbox'
+                    checked={isAgreed}
+                    onChange={(e) => setIsAgreed(e.target.checked)}
+                  />
                   <label>
                     I agree to the Privacy Policy
                   </label>

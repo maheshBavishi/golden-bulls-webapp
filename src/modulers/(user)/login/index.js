@@ -87,7 +87,7 @@ export default function Login() {
                     : {};
 
                 setCookie("userToken", data.payload.token, cookieOptions);
-                setCookie("user", data.payload, cookieOptions);
+                setCookie("user", JSON.stringify(data.payload), cookieOptions);
 
                 setErrors({
                     email: "",

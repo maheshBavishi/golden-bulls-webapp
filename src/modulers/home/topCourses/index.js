@@ -1,16 +1,31 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./topCourses.module.scss";
 import CoursesCard from "@/components/coursesCard";
-import { topCoursesData } from "@/constants";
+import { getCourseByType } from "@/services/dashboard";
 import DownPrimaryIcon from "@/icons/downPrimaryIcon";
 import classNames from "classnames";
 
 export default function TopCourses() {
   const [activeTab, setActiveTab] = React.useState("recorded");
   const [toggle, setToggle] = React.useState(false);
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await getCourseByType();
+        setCourses(response.payload.courses);
+      } catch (error) {
+        console.error("Error fetching courses:", error);
+      }
+    };
+    fetchCourses();
+  }, []);
+
+  console.log(courses,"======courses");
 
   return (
     <div className={styles.topCourses}>
@@ -48,7 +63,7 @@ export default function TopCourses() {
               className={activeTab === "inPerson" ? styles.active : ""}
               onClick={() => setActiveTab("inPerson")}
             >
-              <span>Personal Mentorship</span>
+              <span>In Person Courses</span>
             </button>
           </div>
         </motion.div>
@@ -82,7 +97,7 @@ export default function TopCourses() {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            {topCoursesData[activeTab]?.map((item) => (
+            {/* {topCoursesData[activeTab]?.map((item) => (
               <CoursesCard
                 key={item.id}
                 title={item.title}
@@ -94,7 +109,7 @@ export default function TopCourses() {
                 image={item.image}
                 location={item?.location || ""}
               />
-            ))}
+            ))} */}
           </motion.div>
         </AnimatePresence>
         <motion.div
