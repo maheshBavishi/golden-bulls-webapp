@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from './input.module.scss';
-export default function Input({ label, placeholder, icon, type = 'text', error, onIconClick, ...rest }) {
+import classNames from 'classnames';
+export default function Input({ label, placeholder, smallInput , icon, type = 'text', error, onIconClick, ...rest }) {
     return (
-        <div className={styles.input}>
+        <div className={ classNames(styles.input , smallInput ? styles.inputChange : "") }>
             <label>
                 {label}
             </label>
