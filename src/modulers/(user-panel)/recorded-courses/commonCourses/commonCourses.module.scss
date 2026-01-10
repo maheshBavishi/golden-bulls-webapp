@@ -2,8 +2,8 @@
 @use '../../../../scss/breakpoints/breakpoints.scss' as *;
 @use '../../../../scss/font/font.scss' as *;
 
-.myCoursesAlignment {
-    padding: 32px 0;
+.commonCourses {
+    padding: 0 0 32px 0;
 
     .title {
         padding: 0 0 24px 0;
@@ -22,8 +22,8 @@
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
 
         .griditems {
             border-radius: 21.348px;
@@ -69,6 +69,42 @@
                         font-weight: 500;
                         line-height: normal;
                         @include font-medium;
+                    }
+                }
+
+                .buttonDesign {
+                    button {
+                        width: 100%;
+                    }
+                }
+
+                .secContent {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 0 0 14px 0;
+
+                    h4 {
+                        color: #FFF;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        @include font-bold;
+                    }
+
+                    ul {
+                        margin: 0;
+                        padding: 0 0 0 15px;
+
+                        li {
+                            color: #B6B6B6;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 500;
+                            @include font-medium;
+                            line-height: normal;
+                        }
                     }
                 }
 

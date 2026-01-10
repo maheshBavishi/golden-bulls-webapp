@@ -10,6 +10,31 @@
         max-width: 100%;
     }
 
+    &.smallSize {
+        .titleTextAlignment {
+            padding: 0 0 20px 0;
+
+            h2 {
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                text-transform: uppercase;
+            }
+
+            .line {
+                height: 32px;
+            }
+
+            span {
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+
     .titleTextAlignment {
         display: flex;
         align-items: center;

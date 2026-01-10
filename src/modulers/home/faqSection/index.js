@@ -8,7 +8,7 @@ const faqData = [
     {
         question: 'Do I need any prior knowledge before starting the courses?',
         answer:
-            'The content provided by Golden Bulls is for educational and informational purposes only.',
+            'No prior knowledge is required. Our courses are designed to accommodate learners at all levels, from beginners to those with some prior experience.',
     },
     {
         question: 'Is this course suitable for beginners?',

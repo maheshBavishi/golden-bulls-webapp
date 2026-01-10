@@ -5,6 +5,8 @@
 .sidebar {
     width: 100%;
     height: calc(100dvh - 0px);
+    position: sticky;
+    top: 0;
 
     .sidebarlogo {
         padding: 24px 0;

@@ -7,6 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // position: sticky;
+    // top: 0;
+    // background-color: #000;
+    // z-index: 99;
 
     @include respond-to("xl") {
         padding: 20px 20px 20px 0;

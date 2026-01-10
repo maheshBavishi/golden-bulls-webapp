@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './reviews.module.scss';
 import StarIconXs from '@/icons/starIconXs';
 import { motion } from 'framer-motion';
+import classNames from 'classnames';
 
 const containerVariants = {
     hidden: {},
@@ -29,10 +30,10 @@ const cardVariants = {
     },
 };
 
-export default function Reviews() {
+export default function Reviews({smallFont}) {
     return (
         <motion.div
-            className={styles.reviewsContentAlignment}
+            className={ classNames(styles.reviewsContentAlignment , smallFont ? styles.smallSize : "") }
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
