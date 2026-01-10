@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from 'react'
 import styles from './header.module.scss';
 import Topbar from '../topbar';
@@ -6,10 +6,12 @@ import Button from '../button';
 import Link from 'next/link';
 import MenuIcon from '@/icons/menuIcon';
 import { header } from 'framer-motion/client';
+import { useRouter } from 'next/navigation';
 import classNames from 'classnames';
 const Logo = '/assets/logo/logo.svg';
 export default function Header() {
   const [headerOpen, setHeaderOpen] = useState(false);
+  const router = useRouter();
   return (
     <>
       <div className={styles.headerTop}>
@@ -28,7 +30,7 @@ export default function Header() {
                 <Link href="/blog" aria-label='Blogs'>Blogs</Link>
                 <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
                 <Link href="/register" aria-label='Sign-up'>Sign-up</Link>
-                <Button text='Login' />
+                <Button onClick={() => router.push('/login')} text='Login' />
               </div>
               <div className={styles.menuIcon} onClick={() => setHeaderOpen(!headerOpen)}>
                 <MenuIcon />

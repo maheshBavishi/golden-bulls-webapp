@@ -15,7 +15,7 @@ export default function Input({ label, placeholder, smallInput , icon, type = 't
                     </div>
                 )}
             </div>
-            {error && <span style={{ color: '#ff4d4f', fontSize: '12px', marginTop: '4px', display: 'block' }}>{error}</span>}
+            {error && <span className={styles.errorMessage}>{error}</span>}
         </div>
     )
 }

@@ -7,6 +7,7 @@ import Input from '@/components/input';
 import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
 import { signUp } from '@/services/authService';
+import Authentication from '@/components/authentication';
 
 const LoginBullImage = '/assets/images/login-bull.png';
 const EmailIcon = '/assets/icons/email.svg';
@@ -236,7 +237,7 @@ export default function Register() {
                                 onIconClick={() => setShowConfirmPassword(!showConfirmPassword)}
                             />
 
-                            {errors.submit && <div style={{ color: 'red', marginBottom: '10px', marginTop: '10px' }}>{errors.submit}</div>}
+                            {errors.submit && <div className={styles.submitError}>{errors.submit}</div>}
 
                             <div className={styles.loginButton}>
                                 <button onClick={handleSignup} disabled={isSubmitting}>
@@ -246,13 +247,13 @@ export default function Register() {
                                     </svg>}
                                 </button>
                             </div>
-
-                            <div className={styles.continueGoogle}>
+                            <Authentication />
+                            {/* <div className={styles.continueGoogle}>
                                 <button>
                                     Continue with
                                     <img src={GoogleIcon} alt='GoogleIcon' />
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
