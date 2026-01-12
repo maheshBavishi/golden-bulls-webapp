@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./topCourses.module.scss";
+import CoursesIcon from "@/icons/coursesIcon";
 import CoursesCard from "@/components/coursesCard";
 import { getCourseByType } from "@/services/dashboard";
 import DownPrimaryIcon from "@/icons/downPrimaryIcon";
@@ -24,8 +25,6 @@ export default function TopCourses() {
     };
     fetchCourses();
   }, []);
-
-  console.log(courses,"======courses");
 
   return (
     <div className={styles.topCourses}>
@@ -97,19 +96,32 @@ export default function TopCourses() {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            {/* {topCoursesData[activeTab]?.map((item) => (
-              <CoursesCard
-                key={item.id}
-                title={item.title}
-                price={item.price}
-                author={item.author}
-                duration={item.duration}
-                level={item.level}
-                rating={item.rating}
-                image={item.image}
-                location={item?.location || ""}
-              />
-            ))} */}
+            {courses[activeTab]?.length > 0 ? (
+              courses[activeTab]?.map((item) => (
+                console.log(item, "!!!!item"),
+
+                <CoursesCard
+                  key={item?._id}
+                  title={item?.CourseName}
+                  price={item?.price}
+                  author={item?.instructor?.name}
+                  duration={item?.hours}
+                  level={item?.courseLevel}
+                  rating={4.5}
+                  image={item?.courseVideo}
+                  location={item?.location || ""}
+                  btnLink={`/courses/${item._id}`}
+                />
+              ))
+            ) : (
+              <div className={styles.noData}>
+                <div className={styles.iconWrapper}>
+                  <CoursesIcon />
+                </div>
+                <h3>No courses available</h3>
+                <p>We are currently updating our course list. Please check back later for new content.</p>
+              </div>
+            )}
           </motion.div>
         </AnimatePresence>
         <motion.div

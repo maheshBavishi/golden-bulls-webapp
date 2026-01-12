@@ -1,10 +1,12 @@
 'use client'
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import styles from './coursesDetailsBanner.module.scss';
 import Button from '@/components/button';
 import ClockIcon from '@/icons/clockIcon';
 import StarIcon from '@/icons/starIcon';
+import { getCourseById } from '@/services/dashboard';
 
 const CourseImage = '/assets/images/course-xs.png';
 
@@ -54,6 +56,30 @@ const cardAnim = {
 };
 
 export default function CoursesDetailsBanner() {
+    const params = useParams();
+    const [courseData, setCourseData] = useState([]);
+    console.log(params, "=====params");
+
+    useEffect(() => {
+        const fetchCourse = async () => {
+            if (params?.id) {
+                try {
+                    const response = await getCourseById({ id: params.id });
+
+                    if (response?.success) {
+                        setCourseData(response?.payload?.data);
+                    }
+                } catch (error) {
+                    console.error("Error fetching course details:", error);
+                }
+            }
+        };
+        fetchCourse();
+    }, [params?.id]);
+
+    console.log(courseData, "-----courseData");
+
+
     return (
         <motion.div
             className={styles.coursesDetailsBanner}

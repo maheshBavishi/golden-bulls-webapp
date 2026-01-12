@@ -68,18 +68,23 @@ export default function OnDemandCourses({ title, data, bgColor = "#0C0C0C" }) {
 
         {/* Cards Grid */}
         <motion.div className={styles.grid} variants={containerVariants}>
+          {console.log(data, "]]]]]]data")
+          }
           {data?.map((item) => (
+            console.log(item, "===item"),
+
             <motion.div key={item.id} variants={itemVariants}>
-              <Link href={`/courses/${item.id}`}>
+              <Link href={`/courses/${item._id}`}>
                 <CoursesCard
-                  title={item.title}
+                  title={item.CourseName}
                   price={item.price}
-                  author={item.author}
-                  duration={item.duration}
-                  level={item.level}
-                  rating={item.rating}
-                  image={item.image}
+                  author={item.instructor?.name}
+                  duration={item.hours}
+                  level={item.courseLevel}
+                  rating={3.5}
+                  image={item.courseVideo}
                   location={item?.location || ""}
+                  btnLink={`/courses/${item._id}`}
                 />
               </Link>
             </motion.div>

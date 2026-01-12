@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
+import { useRouter } from 'next/navigation';
 import styles from './coursesCard.module.scss';
 import Button from '../button';
 import StarIcon from '@/icons/starIcon';
@@ -10,7 +11,8 @@ const CourseImage = '/assets/images/course.png'
 const ClockIcon = "/assets/icons/calender-icon.png";
 const Location = "/assets/icons/location-icon.png";
 
-export default function CoursesCard({ title, price, author, duration, level, rating, image,location  }) {
+export default function CoursesCard({ title, price, author, duration, level, rating, image, location, btnLink }) {
+    const router = useRouter();
     return (
         <motion.div
             className={styles.courseCard}
@@ -62,7 +64,7 @@ export default function CoursesCard({ title, price, author, duration, level, rat
                 </h3>
 
                 <div className={styles.secContent}>
-                    <h4>{price}</h4>
+                    <h4>${price}</h4>
                     <ul>
                         <li>{author}</li>
                     </ul>
@@ -72,13 +74,13 @@ export default function CoursesCard({ title, price, author, duration, level, rat
                     <div className={styles.time}>
                         {location ? (
                             <>
-                                <img src={Location} alt="location icon"/>
+                                <img src={Location} alt="location icon" />
                                 <span>{location}</span>
                             </>
                         ) : (
                             <>
-                                <img src={ClockIcon} alt="clock icon"/>
-                                <span>{duration}</span>
+                                <img src={ClockIcon} alt="clock icon" />
+                                <span>{duration} Hours</span>
                             </>
                         )}
                     </div>
@@ -99,7 +101,17 @@ export default function CoursesCard({ title, price, author, duration, level, rat
                     </div>
                 </div>
 
-                <Button text="Enroll Now" className={styles.buttonStyle} />
+                <Button
+                    text="Enroll Now"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (btnLink) {
+                            router.push(btnLink);
+                        }
+                    }}
+                    className={styles.buttonStyle}
+                />
             </div>
         </motion.div>
     )
