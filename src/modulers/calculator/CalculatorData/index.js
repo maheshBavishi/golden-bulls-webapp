@@ -4,15 +4,17 @@ import styles from "./calculatorData.module.scss";
 import classNames from "classnames";
 import PipValueCalculator from "../pipValueCalculator";
 import PositionSizeCalculator from "../positionSizeCalculator";
+import CurrencyCorrelation from "../currencyCorrelation";
 
 export default function CalculatorData() {
   const [activeTab, setActiveTab] = useState(0);
 
-  const tabs = ["Pip Value", "Position Size"];
+  const tabs = ["Pip Value", "Position Size", "Currency Correlation"];
 
   const components = [
     <PipValueCalculator key="pip" />,
     <PositionSizeCalculator key="position" />,
+    <CurrencyCorrelation key="correlation" />,
   ];
 
   return (
