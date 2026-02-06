@@ -16,11 +16,11 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            max-width: 640px;
+            max-width: 350px;
             left: calc(126px + 30px);
 
             @include respond-to("xl") {
-                max-width: 600px;
+                max-width: 350px;
             }
 
             @include respond-to("md") {

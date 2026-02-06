@@ -1,14 +1,14 @@
-'use client';
-import React, { useState } from 'react'
-import styles from './header.module.scss';
-import Topbar from '../topbar';
-import Button from '../button';
-import Link from 'next/link';
-import MenuIcon from '@/icons/menuIcon';
-import { header } from 'framer-motion/client';
-import { useRouter } from 'next/navigation';
-import classNames from 'classnames';
-const Logo = '/assets/logo/logo.svg';
+"use client";
+import React, { useState } from "react";
+import styles from "./header.module.scss";
+import Topbar from "../topbar";
+import Button from "../button";
+import Link from "next/link";
+import MenuIcon from "@/icons/menuIcon";
+import { header } from "framer-motion/client";
+import { useRouter } from "next/navigation";
+import classNames from "classnames";
+const Logo = "/assets/logo/logo.svg";
 export default function Header() {
   const [headerOpen, setHeaderOpen] = useState(false);
   const router = useRouter();
@@ -17,22 +17,38 @@ export default function Header() {
       <div className={styles.headerTop}>
         <Topbar />
         <header className={styles.header}>
-          <div className='container-md'>
+          <div className="container-md">
             <div className={styles.headerAlignment}>
               <div className={styles.logo}>
                 <Link href="/">
-                  <img src={Logo} alt='Logo' />
+                  <img src={Logo} alt="Logo" />
                 </Link>
               </div>
               <div className={styles.menu}>
-                <Link href="/about-us" aria-label='About Us'>About Us</Link>
-                <Link href="/courses" aria-label='Courses'>Courses</Link>
-                <Link href="/blog" aria-label='Blogs'>Blogs</Link>
-                <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
-                <Link href="/register" aria-label='Sign-up'>Sign-up</Link>
-                <Button onClick={() => router.push('/login')} text='Login' />
+                <Link href="/about-us" aria-label="About Us">
+                  About Us
+                </Link>
+                <Link href="/courses" aria-label="Courses">
+                  Courses
+                </Link>
+                <Link href="/blog" aria-label="Blogs">
+                  Blogs
+                </Link>
+                <Link href="/contact-us" aria-label="Contact Us">
+                  Contact Us
+                </Link>
+                <Link href="/economic-calender">Economic calender</Link>
+                <Link href="/calculator">Calculator</Link>
+                <Link href="/register" aria-label="Sign-up">
+                  Sign-up
+                </Link>
+
+                <Button onClick={() => router.push("/login")} text="Login" />
               </div>
-              <div className={styles.menuIcon} onClick={() => setHeaderOpen(!headerOpen)}>
+              <div
+                className={styles.menuIcon}
+                onClick={() => setHeaderOpen(!headerOpen)}
+              >
                 <MenuIcon />
               </div>
               <div className={styles.line}></div>
@@ -40,11 +56,16 @@ export default function Header() {
           </div>
         </header>
       </div>
-      <div className={classNames(styles.mobileSidebar, headerOpen ? styles.show : styles.hide)}>
+      <div
+        className={classNames(
+          styles.mobileSidebar,
+          headerOpen ? styles.show : styles.hide,
+        )}
+      >
         <div className={styles.mobileSidebarTop}>
           <div className={styles.logo} onClick={() => setHeaderOpen(false)}>
             <Link href="/">
-              <img src={Logo} alt='Logo' />
+              <img src={Logo} alt="Logo" />
             </Link>
           </div>
           <div className={styles.close} onClick={() => setHeaderOpen(false)}>
@@ -53,17 +74,33 @@ export default function Header() {
             </svg>
           </div>
         </div>
-        <div className={styles.mobileSidebarBody} onClick={() => setHeaderOpen(false)}>
-          <Link href="/about-us" aria-label='About Us'>About Us</Link>
-          <Link href="/courses" aria-label='Courses'>Courses</Link>
-          <Link href="/blog" aria-label='Blogs'>Blogs</Link>
-          <Link href="/contact-us" aria-label='Contact Us'>Contact Us</Link>
-          <Link href="/register" aria-label='Sign-up'>Sign-up</Link>
+        <div
+          className={styles.mobileSidebarBody}
+          onClick={() => setHeaderOpen(false)}
+        >
+          <Link href="/about-us" aria-label="About Us">
+            About Us
+          </Link>
+          <Link href="/courses" aria-label="Courses">
+            Courses
+          </Link>
+          <Link href="/blog" aria-label="Blogs">
+            Blogs
+          </Link>
+          <Link href="/contact-us" aria-label="Contact Us">
+            Contact Us
+          </Link>
+          <Link href="/register" aria-label="Sign-up">
+            Sign-up
+          </Link>
         </div>
-        <div className={styles.mobileSidebarfooter} onClick={() => setHeaderOpen(false)}>
+        <div
+          className={styles.mobileSidebarfooter}
+          onClick={() => setHeaderOpen(false)}
+        >
           <Button text="Login" />
         </div>
       </div>
     </>
-  )
+  );
 }
