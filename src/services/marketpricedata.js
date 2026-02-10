@@ -86,6 +86,63 @@ class MarketDataService {
   }
 
   /**
+   * Fetch time series data for a symbol
+   * @param {string} symbol - Forex pair (e.g., "USD/CHF")
+   * @param {string} interval - Time interval (e.g., "1min", "5min", "15min", "1h", "1day")
+   * @param {number} outputsize - Number of data points to return (default: 60)
+   * @returns {Promise<Object>} Time series data
+   */
+  async fetchTimeSeries(symbol, interval = "5min", outputsize = 60) {
+    if (!this.apiKey) {
+      console.error("❌ Twelve Data API key not found");
+      throw new Error("API key not found");
+    }
+
+    console.log(`🔄 Fetching time series for ${symbol} (${interval})...`);
+
+    try {
+      const response = await this.client.get("/time_series", {
+        params: {
+          symbol,
+          interval,
+          outputsize,
+          apikey: this.apiKey,
+        },
+      });
+
+      const data = response.data;
+
+      if (data?.values) {
+        console.log(`✅ Time series for ${symbol}: ${data.values.length} data points`);
+        return {
+          symbol,
+          interval,
+          values: data.values,
+          meta: data.meta,
+        };
+      }
+
+      if (data?.code) {
+        console.error(`❌ API Error for ${symbol}:`, data.message);
+        throw new Error(data.message || "Failed to fetch time series");
+      }
+
+      throw new Error("Invalid response format");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.error(
+          `❌ Axios error for ${symbol}:`,
+          error.response?.data || error.message,
+        );
+        throw new Error(error.response?.data?.message || "Network/API error");
+      }
+
+      console.error(`❌ Unknown error for ${symbol}:`, error);
+      throw error;
+    }
+  }
+
+  /**
    * Clear cache for a specific symbol or all symbols
    * @param {string|null} symbol
    */
